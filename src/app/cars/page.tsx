@@ -27,7 +27,7 @@ const CarsPage = () => {
 
   return (
     <>
-      <div className="bg-gray-100 min-h-screen mt-24">
+      <div className="bg-gray-100 min-h-screen pt-24">
         <main className="container mx-auto py-10 px-6">
           {cars.map((car, index) => (
             <div
@@ -46,7 +46,7 @@ const CarsPage = () => {
 
               {/* Middle Column - Ride Details */}
               <div className="text-center flex flex-col justify-center">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">Ride Details</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">RIDE DETAILS</h3>
                 <p className="text-gray-600"><strong>Pickup:</strong> {pickup || 'Not specified'}</p>
                 <p className="text-gray-600"><strong>Dropoff:</strong> {dropoff || 'Not specified'}</p>
                 <p className="text-gray-600"><strong>Date:</strong> {date || 'Not specified'}</p>
@@ -57,7 +57,8 @@ const CarsPage = () => {
               <div className="flex items-center justify-center">
                 <button
                   onClick={() => handleBookNow(car.name, car.image)}
-                  className="px-6 py-3 bg-blue-500 text-white font-medium rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"
+                  className="px-6 py-3 bg-blue-500 text-white font-medium rounded-lg shadow-md hover:bg-blue-600 transition-colors 
+                  duration-300 text-sm"
                 >
                   Book Now
                 </button>

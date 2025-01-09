@@ -33,7 +33,7 @@ const SouthSikkim = () => {
 
   return (
     <>
-     <div className="container mx-auto p-6 space-y-8 mt-28">
+     <div className="container mx-auto p-6 space-y-8 pt-28">
       {/* First Grid: Slider and Map */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left: Photo Slider */}

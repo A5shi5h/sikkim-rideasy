@@ -58,7 +58,7 @@ export default function Gallery() {
 
     return (
         <>
-         <div className="bg-gray-100 min-h-screen mt-28">
+         <div className="bg-gray-100 min-h-screen pt-28">
             <main className="container mx-auto p-6">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Gallery</h2>
                 <p className="text-gray-600 mb-8 text-center">Explore the breathtaking views of Sikkim with Sikkim RidEasy.</p>
