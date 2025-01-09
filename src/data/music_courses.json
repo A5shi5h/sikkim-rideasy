@@ -1,0 +1,106 @@
+{
+    "destinations": [
+      {
+        "id": 1,
+        "title": "East Sikkim",
+        "slug": "eastsikkim",
+        "description": "Gangtok District is an administrative district of the Indian state of Sikkim. It was renamed in 2021 as a result of administrative reorganisation of the state",
+        "price": 99.99,
+        "instructor": "John Doe",
+        "isFeatured": true,
+        "image": "/destinations/east sikkim.jpg" 
+      },
+      {
+        "id": 2,
+        "title": "North Sikkim",
+        "slug": "northsikkim",
+        "description": "North Sikkim is a district of the Indian state of Sikkim. Its district headquarters is Mangan. It is the seventh least populous district in the country",
+        "price": 109.99,
+        "instructor": "Jane Smith",
+        "isFeatured": true,
+        "image": "/destinations/north sikkim.jpg" 
+      },
+      {
+        "id": 3,
+        "title": "South Sikkim",
+        "slug": "southsikkim",
+        "description": "Since the geology is stable the roads are in good condition as compared to other parts of the state which suffer from landslides. The district is also known for Sikkim tea, which is grown near Namchi.",
+        "price": 119.99,
+        "instructor": "Emily Johnson",
+        "isFeatured": true,
+        "image":"/destinations/south sikkim.jpg" 
+      },
+      {
+        "id": 4,
+        "title": "Changu Lake",
+        "slug": "music-production-fundamentals",
+        "description": "Tsomgo Lake, also known as Tsongmo Lake or Changu Lake, is a glacial lake in the East Sikkim district of the Indian state of Sikkim, some 40 kilometres (25 mi) from the capital Gangtok.",
+        "price": 149.99,
+        "instructor": "Alex Wilson",
+        "isFeatured": false,
+        "image": "/destinations/changu.jpg" 
+      },
+      {
+        "id": 5,
+        "title": "Gurudongmar Lake",
+        "slug": "jazz-improvisation",
+        "description": "Gurudongmar Lake is one of the highest lakes in the world and in India, at an elevation of 5,430 m according to the Government of Sikkim. It is located in the Great Himalayas in the Mangan District in Indian state of Sikkim,",
+        "price": 139.99,
+        "instructor": "Chris Davis",
+        "isFeatured": false,
+        "image": "/destinations/gurudongmar.jpg" 
+      },
+      {
+        "id": 6,
+        "title": "West Sikkim",
+        "slug": "westsikkim",
+        "description": "Gyalshing District or Geyzing District is a district of the Indian state of Sikkim. Its headquarter is Geyzing, also known as Gyalshing. The district is a favourite with trekkers due to the high elevations.",
+        "price": 129.99,
+        "instructor": "Mike Brown",
+        "isFeatured": true,
+        "image": "/destinations/west sikkim.jpg" 
+        
+      },
+      {
+        "id": 7,
+        "title": "Buddha Park",
+        "slug": "songwriting-essentials",
+        "description": "Gently seated in a small tourist town in the southern part of Sikkim, Buddha Park is a must visit place by every traveller. This famous attraction serves as an important landmark to the Buddhist community.",
+        "price": 159.99,
+        "instructor": "Samantha Miller",
+        "isFeatured": false,
+        "image": "/destinations/buddha park.jpg" 
+      },
+      {
+        "id": 8,
+        "title": "Bhaley Dhunga",
+        "slug": "electronic-music-production",
+        "description": "Gently seated in a small tourist town in the southern part of Sikkim, Buddha Park is a must visit place by every traveller. This famous attraction serves as an important landmark to the Buddhist community.",
+        "price": 169.99,
+        "instructor": "Luke Harris",
+        "isFeatured": false,
+        "image": "/destinations/bhaleydhunga.jpg" 
+      },
+      {
+        "id": 9,
+        "title": "SingShore Bridge",
+        "slug": "classical-music-history",
+        "description": "Besides serving its primary role as a linkage, Singshore Bridge has also become a popular spot for adventure enthusiasts and nature lovers. ",
+        "price": 179.99,
+        "instructor": "Grace Lee",
+        "isFeatured": false,
+        "image": "/destinations/singshore-bridge.jpg" 
+      },
+      {
+        "id": 10,
+        "title": "Zuluk",
+        "slug": "blues-guitar-techniques",
+        "description": "Dzuluk or Zuluk or Jhuluk or Jaluk is a small hamlet located at a height of 9,400 feet on the rugged terrain of the lower Himalayas in Rongli Subdivision of Pakyong District, which lies in the Indian state Sikkim.",
+        "price": 189.99,
+        "instructor": "Ethan Moore",
+        "isFeatured": false,
+        "image": "/destinations/zuluk.jpg" 
+      }
+    ]
+  }
+  
