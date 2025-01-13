@@ -76,14 +76,12 @@ const SouthSikkim = () => {
       </div>
 
       {/* Second Grid: Places to Visit and About Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-1/2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left: About Section */}
-        <div className="rounded-lg p-4 border border-slate-400 text-white">
+        <div className="rounded-lg p-4 text-white">
           <h1 className="text-2xl font-bold mb-4">About South Sikkim</h1>
           <p className="">
-            South Sikkim is renowned for its lush tea gardens, spiritual
-            landmarks, and serene landscapes. It's a perfect getaway for
-            travelers seeking peace and natural beauty.
+          South Sikkim is the most industrialised district in the state, owing to the availability of flat land. Since the geology is stable the roads are in good condition as compared to other parts of the state which suffer from landslides. The district is also known for Sikkim tea, which is grown near Namchi.<br/><br/>According to the 2011 census, Namchi district has a population of 146,850, roughly equal to the nation of Saint Lucia.This gives it a ranking of 600th in India (out of a total of 640).The district has a population density of 196 inhabitants per square kilometre (510/sq mi). Its population growth rate over the decade 2001–2011 was 11.57%. and has a sex ratio of 914 females for every 1000 males, and a literacy rate of 82.06%. 14.44% of the population lives in urban areas. Scheduled Castes and Scheduled Tribes make up 4.12% and 28.19% of the population respectively.
           </p>
         </div>
 

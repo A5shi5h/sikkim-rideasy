@@ -80,15 +80,13 @@ const NorthSikkim = () => {
       </div>
 
       {/* Second Grid: Places to Visit and About Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-1/2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Left: About Section */}
-        <div className="rounded-lg p-4 text-white border border-slate-400">
+        <div className="rounded-lg p-4 text-white">
           <h1 className="text-2xl font-bold mb-4">About North Sikkim</h1>
           <p className="">
-            North Sikkim is a mesmerizing region of pristine lakes, snow-covered
-            valleys, and majestic peaks. Home to the famous Gurudongmar Lake and
-            Yumthang Valley, it offers a perfect escape for nature enthusiasts
-            and adventure lovers alike.
+          North Sikkim (now officially named as Mangan District)[2] is a district of the Indian state of Sikkim. Its district headquarters is Mangan. It is the seventh least populous district in the country (out of 640).<br/><br/>Mangan is the largest of the six districts of Sikkim. The landscape is mountainous with dense vegetation all the way up to the alpine altitude before thinning out to desert scrub towards the northern tundra. Numerous waterfalls astride the main road make the trip to this district extremely picturesque.
+          The most prominent effect of the steepness of the valleys is the prevalence of landslides that at times drop debris anything between 3,000 and 5,000 ft (900 and 1,500 m) carrying devastation along their course. Most of them are caused either by melting snow beds on top of the mountains or by erosive action of monsoon rains.
           </p>
         </div>
 

@@ -81,21 +81,16 @@ const EastSikkim = () => {
       </div>
 
       {/* Second Grid: Places to Visit and About Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
         {/* Left: Places to Visit */}
-        <div className="rounded-lg p-4 border border-slate-400">
+        <div className="rounded-lg p-4">
           <h1 className="text-2xl font-bold mb-4 text-white">About East Sikkim</h1>
           <p className="text-white">
-            East Sikkim is a picturesque region known for its pristine lakes,
-            serene monasteries, and breathtaking mountain views. A favorite
-            among nature lovers and adventure seekers, it offers a mix of
-            cultural heritage and natural beauty, making it an ideal destination
-            for travelers.
+          Gangtok District is an administrative district of the Indian state of Sikkim. It was renamed in 2021 as a result of administrative reorganisation of the state, which also saw three subdivisions of the East Sikkim district spawned off as a separate Pakyong district.The headquarters of the Gangtok district is Gangtok, which is also the state capital. Gangtok is the hub of all administrative activity in the state. The district is bounded by the Pakyong district in the south and southeast, Bhutan in the east, the People's Republic of China in the northeast, Mangan District in the north and Namchi District in the west.<br/><br/>The civilian region is administered by a district collector, appointed by the state government. A major general is assigned to administer military forces in the district. As of 2011 it is the most populous of the six districts of Sikkim.
           </p>
         </div>
         {/* Right: About Section */}
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-4">
         {/* Left: Places to Visit */}
         <div className="bg-white shadow rounded-lg p-4">
           <h1 className="text-2xl font-bold mb-4">PLACES OF INTEREST</h1>
@@ -112,6 +107,7 @@ const EastSikkim = () => {
               </div>
             ))}
           </div>
+        </div>
       </div>
     </div>
   </div>

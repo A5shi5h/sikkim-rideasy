@@ -79,14 +79,13 @@ const WestSikkim = () => {
       </div>
 
       {/* Second Grid: Places to Visit and About Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-1/2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         {/* Right: About Section */}
-        <div className="rounded-lg p-4 border border-slate-400 text-white">
+        <div className="rounded-lg p-4 text-white">
           <h1 className="text-2xl font-bold mb-4">About West Sikkim</h1>
           <p className="">
-            West Sikkim is a treasure trove of history, culture, and natural beauty. 
-            With monasteries, waterfalls, and serene lakes, it’s a perfect destination for adventurers and peace seekers alike.
+          Gyalshing District or Geyzing District[3] is a district of the Indian state of Sikkim. Its headquarter is Geyzing, also known as Gyalshing. The district is a favourite with trekkers due to the high elevations. Other important towns include Pelling and Yuksom. Local people also call it as Pallo-Sikkim and Sano-Sikkim commonly.<br/><br/>Gyalshing district covers an area of 1,166 square kilometres (450 sq mi). Attractions include the Khecheopalri Lake, where, according to legend, not a leaf is allowed to fall on the surface of the lake and the Dubdi Monastery, the first monastery of the state.
           </p>
         </div>
 

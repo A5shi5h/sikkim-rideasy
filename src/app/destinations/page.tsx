@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import destinationeData from "@/data/music_courses.json"
+import Link from "next/link";
 
 function page() {
   return (
@@ -40,7 +41,7 @@ function page() {
                       as="button"
                       className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                     >
-                      Book Now
+                      <Link href={"/cars"}>Book Now</Link>
                     </CardItem>
                   </div>
                 </CardBody>
