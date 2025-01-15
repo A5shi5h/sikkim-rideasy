@@ -39,9 +39,12 @@ const BookingReview = () => {
   };
 
     const searchParams = useSearchParams();
-    const place = searchParams.get('place');
+    
     const vehicle = searchParams.get('vehicle');
+    const price = searchParams.get('price');
     const image = searchParams.get('image');
+    const destination = searchParams.get('destination');
+    const date = searchParams.get('date');
 
   return (
     <section className="bg-gray-100 min-h-screen pt-36 p-8 md:p-[10rem]">
@@ -49,8 +52,10 @@ const BookingReview = () => {
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Review and Confirm Your Booking</h1>
         <img src={image}/>
         <p className="text-xl mb-6 text-center">
-        <strong>Vehicle:</strong> {place || 'N/A'} <br />
-        <strong>Price:</strong> {vehicle || 'N/A'}
+        <strong>Vehicle:</strong> {vehicle || 'N/A'} <br />
+        <strong>Price:</strong> {price || 'N/A'} <br/>
+        <strong>Destination:</strong> {destination || 'N/A'} <br/>
+        <strong>Date:</strong> {date || 'N/A'} <br/>
       </p>
 
         {isEditing ? (

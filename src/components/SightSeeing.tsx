@@ -15,11 +15,11 @@ const SightSeeing = () => {
     const handleSubmit = (e:any) => {
         e.preventDefault();
         if(destination == "gangtok"){
-          router.push("/Gangtok-Sightseeing");
+          router.push(`/Gangtok-Sightseeing?destination=${destination}&date=${date}`);
         }else if(destination == "namchi"){
-          router.push("/Namchi-Sightseeing");
+          router.push(`/Namchi-Sightseeing?destination=${destination}&date=${date}`);
         }else if(destination == "tsomgo"){
-          router.push("/Nathula-Sightseeing");
+          router.push(`/Nathula-Sightseeing?destination=${destination}&date=${date}`);
         }else{
           router.push("/enquire")
         }

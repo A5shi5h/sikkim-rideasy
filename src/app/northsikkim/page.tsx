@@ -91,11 +91,11 @@ const NorthSikkim = () => {
         </div>
 
          {/* Right: Places to Visit */}
-         <div className="bg-white shadow rounded-lg p-4">
-          <h1 className="text-2xl font-bold mb-4">PLACES OF INTEREST</h1>
+         <div className="bg-transparent shadow rounded-lg p-4">
+          <h1 className="text-2xl font-bold mb-4 text-white">PLACES OF INTEREST</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {placesToVisit.map((place, index) => (
-              <div key={index} className="p-4 border rounded-lg shadow">
+              <div key={index} className="p-4 border rounded-lg shadow bg-white">
                 <img
                   src={place.image}
                   alt={place.name}

@@ -2,7 +2,7 @@
 
 import Footer from '@/components/Footer';
 import Instructors from '@/components/Instructors';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 
 const GangtokSightseeing = () => {
@@ -21,8 +21,13 @@ const GangtokSightseeing = () => {
     'Bakthang Waterfalls',
   ];
 
-  const handleBookNow = (placeName:any, carType:any, image:any) => {
-    router.push(`/reviewBooking?place=${placeName}&vehicle=${carType}&image=${image}`);
+  const searchParams = useSearchParams();
+
+  const destination = searchParams.get('destination');
+  const date = searchParams.get('date');
+
+  const handleBookNow = (carType:any, price:any, image:any, date:any , destination:any) => {
+    router.push(`/reviewBooking?vehicle=${carType}&price=${price}&image=${image}&date=${date}&destination=${destination}`);
   };
 
   const cars = [
@@ -77,7 +82,7 @@ const GangtokSightseeing = () => {
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{car.name}</h3>
                     <p className="text-gray-600 text-lg mb-4">{car.price}</p>
                     <button
-                      onClick={() => handleBookNow(car.name, car.price, car.image)}
+                      onClick={() => handleBookNow(car.name, car.price, car.image , date , destination)}
                       className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"
                     >
                       Book Now

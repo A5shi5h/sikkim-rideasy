@@ -41,8 +41,8 @@ const WestSikkim = () => {
       {/* First Grid: Slider and Map */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Left: Photo Slider */}
-        <div className="bg-white shadow rounded-lg p-4">
-          <h1 className="text-2xl font-bold mb-4">Photos of West Sikkim</h1>
+        <div className="bg-transparent shadow rounded-lg p-4">
+          <h1 className="text-2xl font-bold mb-4 text-white">Photos of West Sikkim</h1>
           <div className="relative w-full h-64 bg-gray-200 overflow-hidden rounded-lg">
             <img
               src="/images/west sikkim.jpg"
@@ -90,11 +90,11 @@ const WestSikkim = () => {
         </div>
 
         {/* Left: Places to Visit */}
-        <div className="bg-white shadow rounded-lg p-4">
-          <h1 className="text-2xl font-bold mb-4">Places to Visit</h1>
+        <div className="bg-transparent shadow rounded-lg p-4">
+          <h1 className="text-2xl font-bold mb-4 text-white">Places to Visit</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {placesToVisit.map((place, index) => (
-              <div key={index} className="p-4 border rounded-lg shadow">
+              <div key={index} className="p-4 border rounded-lg shadow bg-white">
                 <img
                   src={place.image}
                   alt={place.name}
