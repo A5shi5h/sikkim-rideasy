@@ -8,7 +8,7 @@ function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={cn("fixed top-0 inset-x-0 lg:inset-x-20 z-50 p-4 bg-black shadow-md text-white rounded-md", className)}>
+    <nav className={cn("fixed top-0 inset-x-0 lg:inset-x-20 z-50 p-2 bg-black shadow-md text-white rounded-md", className)}>
       <div className="container mx-auto px-4 lg:py-3 py-10 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold">

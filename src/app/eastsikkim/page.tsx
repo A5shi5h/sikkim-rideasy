@@ -42,8 +42,8 @@ const EastSikkim = () => {
       {/* First Grid: Slider and Map */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Left: Photo Slider */}
-        <div className=" bg-white rounded-lg p-4">
-          <h1 className="text-2xl font-bold mb-4">East Sikkim</h1>
+        <div className=" bg-transparent rounded-lg p-4">
+          <h1 className="text-2xl font-bold mb-4 text-white">East Sikkim</h1>
           <div className="relative w-full h-64 bg-gray-200 overflow-hidden rounded-lg">
             {/* Replace with your image slider */}
             <img
