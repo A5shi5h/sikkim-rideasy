@@ -11,27 +11,27 @@ const page = () => {
       name: 'Gangtok-Sightseeing',
       image: '/images/gangtok.jpg',
       cars: [
-        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹2500.00/day' },
-        { type: 'Sedan(Max 4 Seater)', image: '/sedan.jpg', price: '₹2800.00/day' },
-        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4500.00/day' },
+        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹2500/day' },
+        { type: 'Sedan(Max 4 Seater)', image: '/sedan.jpg', price: '₹2800/day' },
+        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4500/day' },
       ],
     },
     {
       name: 'Namchi-Sightseeing',
       image: '/images/namchi.jpg',
       cars: [
-        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹4000.00/day' },
-        { type: 'Sedan(Max 4 Seater)', image: '/sedan.jpg', price: '₹4300.00/day' },
-        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4800.00/day' },
+        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹4000/day' },
+        { type: 'Sedan(Max 4 Seater)', image: '/sedan.jpg', price: '₹4300/day' },
+        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4800/day' },
       ],
     },
     {
       name: 'Nathula-Sightseeing',
       image: 'images/nathula-pass.jpg',
       cars: [
-        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹3500.00/day' },
+        { type: 'Hatchback(Max 4 Seater)', image: '/hatchback.jpg', price: '₹3500/day' },
         { type: 'Sedan(Max 4 Seater)', image: '/sedan.jpg', price: '₹3800/day' },
-        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4500.00/day' },
+        { type: 'SUV(Max 7 Seater)', image: '/suv.jpg', price: '₹4500/day' },
       ],
     },
   ];

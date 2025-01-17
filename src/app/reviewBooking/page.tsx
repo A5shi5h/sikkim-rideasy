@@ -54,14 +54,11 @@ const BookingReview = () => {
 
   return (
     <section className="bg-gray-100 min-h-screen pt-28 pb-8 px-4 md:px-16">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
-        <h1 className="text-2xl font-bold text-gray-800 text-center mb-8">
-          Review and Confirm Your Booking
-        </h1>
-
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Review and Confirm Your Booking</h1>
         <img 
           src={image || '/images/default.jpg'} 
-          alt={'Vehicle'} 
+          alt={'Selected Car'} 
         />
         <div className="text-lg text-center mb-8 space-y-2">
           <p><strong>VEHICLE:</strong> {vehicle || "N/A"}</p>
