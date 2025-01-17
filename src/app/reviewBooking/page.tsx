@@ -59,12 +59,10 @@ const BookingReview = () => {
           Review and Confirm Your Booking
         </h1>
 
-        <img
-          src={image}
-          alt="Vehicle"
-          className="w-full h-full object-cover mb-6"
+        <img 
+          src={image || '/images/default.jpg'} 
+          alt={'Vehicle'} 
         />
-
         <div className="text-lg text-center mb-8 space-y-2">
           <p><strong>VEHICLE:</strong> {vehicle || "N/A"}</p>
           <p><strong>PRICE:</strong> {price || "N/A"}</p>

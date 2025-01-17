@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
@@ -12,7 +13,7 @@ const PichNDropBooking = () => {
     email: "",
     pickup: "",
     dropoff: "",
-    date: ""
+    time: ""
   });
 
   const [isEditing, setIsEditing] = useState(true);
@@ -45,18 +46,23 @@ const PichNDropBooking = () => {
     const dropoff = searchParams.get('dropoff');
     const date = searchParams.get('date');
     const car = searchParams.get('car');
-    const image = searchParams.get('image')
+    const image = searchParams.get('image');
+    const price = searchParams.get('price');
 
   return (
     <section className="bg-gray-100 min-h-screen pt-36 p-8 md:p-[10rem]">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Review and Confirm Your Booking</h1>
-        <img src={image}/>
+        <img 
+          src={image || '/images/default.jpg'} 
+          alt={car || 'Selected Car'} 
+        />
         <p className="text-xl mb-6 text-center">
         <strong>Vehicle:</strong> {car || 'N/A'} <br />
         <strong>Pick Up:</strong> {pickup || 'N/A'} <br />
         <strong>Drop Off:</strong> {dropoff || 'N/A'}<br/>
-        <strong>Date:</strong> {date || 'N/A'}
+        <strong>Date:</strong> {date || 'N/A'}<br/>
+        <strong>Amount:</strong> {price || 'N/A'}
       </p>
 
         {isEditing ? (
@@ -128,9 +134,9 @@ const PichNDropBooking = () => {
                     required
                   />
                   <input
-                    type="date"
-                    name="date"
-                    value={details.date}
+                    type="time"
+                    name="time"
+                    value={details.time}
                     onChange={handleChange}
                     placeholder="Enter travel date"
                     className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -142,7 +148,7 @@ const PichNDropBooking = () => {
 
             <input type="checkbox" required className="mr-2 mt-6" />
             <label>
-              I agree to the <strong>Terms and Conditions</strong>.
+              I agree to the <Link href={"/terms-and-conditions"}><strong>Terms and Conditions</strong></Link>.
             </label>
 
             <button

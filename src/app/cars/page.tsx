@@ -5,11 +5,6 @@ import Instructors from '@/components/Instructors';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 const CarsPage = () => {
-  const cars = [
-    { name: 'Hatchback', image: '/images/hatchback1.jpg' },
-    { name: 'Sedan', image: '/images/sedan1.jpg' },
-  ];
-
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -17,11 +12,19 @@ const CarsPage = () => {
   const pickup = searchParams.get('pickup');
   const dropoff = searchParams.get('dropoff');
   const date = searchParams.get('date');
-  const time = searchParams.get('time');
+  const hatchbackAmount = searchParams.get('hatchbackPrice'); 
+  const sedanAmount = searchParams.get('sedanPrice');
 
-  const handleBookNow = (carName:any, carImage:any) => {
+  const cars = [
+    { name: 'Hatchback', image: '/images/hatchback1.jpg', price: hatchbackAmount },
+    { name: 'Sedan', image: '/images/sedan1.jpg', price: sedanAmount },
+  ];
+
+  const handleBookNow = (carName: any, carImage: any) => {
     router.push(
-      `/pickndropBooking?pickup=${pickup}&dropoff=${dropoff}&date=${date}&car=${carName}&image=${carImage}`
+      `/pickndropBooking?pickup=${pickup}&dropoff=${dropoff}&date=${date}&car=${carName}&image=${carImage}&price=${
+        carName === 'Hatchback' ? hatchbackAmount : sedanAmount
+      }`
     );
   };
 
@@ -50,7 +53,7 @@ const CarsPage = () => {
                 <p className="text-gray-600"><strong>Pickup:</strong> {pickup || 'Not specified'}</p>
                 <p className="text-gray-600"><strong>Dropoff:</strong> {dropoff || 'Not specified'}</p>
                 <p className="text-gray-600"><strong>Date:</strong> {date || 'Not specified'}</p>
-                <p className="text-gray-600"><strong>Time:</strong> {time || 'Not specified'}</p>
+                <p className="text-gray-600"><strong>Amount:</strong> ₹{car.price || 'Not specified'}</p>
               </div>
 
               {/* Right Column - Book Now Button */}
