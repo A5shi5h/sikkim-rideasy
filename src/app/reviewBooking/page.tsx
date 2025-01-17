@@ -65,7 +65,7 @@ const BookingReview = () => {
         />
         <div className="text-lg text-center mb-8 space-y-2">
           <p><strong>VEHICLE:</strong> {vehicle || "N/A"}</p>
-          <p><strong>PRICE:</strong> ₹{price || "N/A"}</p>
+          <p><strong>PRICE:</strong> {price || "N/A"}</p>
           <p><strong>DESTINATION:</strong> {destination || "N/A"}</p>
           <p><strong>DATE:</strong> {date || "N/A"}</p>
         </div>
