@@ -62,7 +62,7 @@ const PichNDropBooking = () => {
         <strong>Pick Up:</strong> {pickup || 'N/A'} <br />
         <strong>Drop Off:</strong> {dropoff || 'N/A'}<br/>
         <strong>Date:</strong> {date || 'N/A'}<br/>
-        <strong>Amount:</strong> {price || 'N/A'}
+        <strong>Amount:</strong> ₹{price || 'N/A'}
       </p>
 
         {isEditing ? (
