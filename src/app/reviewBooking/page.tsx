@@ -1,9 +1,11 @@
 "use client";
+
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const BookingReview = () => {
+const ReviewBooking = () => {
+
   const [details, setDetails] = useState({
     name: "",
     age: "",
@@ -16,9 +18,27 @@ const BookingReview = () => {
 
   const [isEditing, setIsEditing] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState("");
-  const [paymentAdvance, setPaymentAdvance] = useState(""); // New state for advance payment options
+  const [paymentAdvance, setPaymentAdvance] = useState("");
+  const [payableAmount, setPayableAmount] = useState(0); // Store the calculated amount
 
-  const handleChange = (e:any) => {
+  const searchParams = useSearchParams();
+
+  const destination = searchParams.get('destination');
+  const date = searchParams.get("date");
+  const carType = searchParams.get("vehicle");
+  const image = searchParams.get("image");
+  const price = parseFloat(searchParams.get("price") || "0"); // Convert to a number
+
+  useEffect(() => {
+    // Update payable amount based on the selected advance payment option
+    if (paymentAdvance === "Full Payment") {
+      setPayableAmount(price);
+    } else if (paymentAdvance === "50% Advance") {
+      setPayableAmount(price / 2);
+    }
+  }, [paymentAdvance, price]);
+
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setDetails((prev) => ({
       ...prev,
@@ -26,122 +46,134 @@ const BookingReview = () => {
     }));
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    setIsEditing(false);
+    setIsEditing(false); // Move to the summary page
   };
 
   const handlePaymentSubmit = () => {
-    if (!paymentAdvance) {
-      alert("Please select an advance payment option!");
-      return;
-    }
     if (!paymentMethod) {
       alert("Please select a payment method!");
       return;
     }
     alert(
-      `Booking Confirmed!\nDetails: ${JSON.stringify(details)}\nAdvance Payment: ${paymentAdvance}\nPayment Method: ${paymentMethod}`
+      `Booking Confirmed!\nDetails: ${JSON.stringify(
+        details
+      )}\nAdvance Payment: ${paymentAdvance}\nPayable Amount: ₹${payableAmount}\nPayment Method: ${paymentMethod}`
     );
   };
 
-  const searchParams = useSearchParams();
-  const vehicle = searchParams.get("vehicle");
-  const price = searchParams.get("price");
-  const image = searchParams.get("image");
-  const destination = searchParams.get("destination");
-  const date = searchParams.get("date");
-
   return (
-    <section className="bg-gray-100 min-h-screen pt-28 pb-8 px-4 md:px-16">
+    <section className="bg-gray-100 min-h-screen pt-36 p-8 md:p-[10rem]">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Review and Confirm Your Booking</h1>
-        <img 
-          src={image || '/images/default.jpg'} 
-          alt={'Selected Car'} 
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          Review and Confirm Your Booking
+        </h1>
+        <img
+          src={image || "/images/default.jpg"}
+          alt={carType || "Selected Car"}
+          className="mb-6 rounded-lg"
         />
-        <div className="text-lg text-center mb-8 space-y-2">
-          <p><strong>VEHICLE:</strong> {vehicle || "N/A"}</p>
-          <p><strong>PRICE:</strong> {price || "N/A"}</p>
-          <p><strong>DESTINATION:</strong> {destination || "N/A"}</p>
-          <p><strong>DATE:</strong> {date || "N/A"}</p>
-        </div>
+        <p className="text-xl mb-6 text-center">
+          <strong>Vehicle:</strong> {carType || "N/A"} <br />
+          <strong>Destination:</strong> {destination || "N/A"} <br />
+          <strong>Date:</strong> {date || "N/A"} <br />
+          <strong>Amount:</strong> ₹{price || "N/A"}
+        </p>
 
         {isEditing ? (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Passenger Details</h2>
+          <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                name="name"
-                value={details.name}
-                onChange={handleChange}
-                placeholder="Passenger Name"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="number"
-                name="age"
-                value={details.age}
-                onChange={handleChange}
-                placeholder="Age"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="tel"
-                name="mobile"
-                value={details.mobile}
-                onChange={handleChange}
-                placeholder="Mobile Number"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                value={details.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="text"
-                name="pickup"
-                value={details.pickup}
-                onChange={handleChange}
-                placeholder="Pickup Location"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="text"
-                name="dropoff"
-                value={details.dropoff}
-                onChange={handleChange}
-                placeholder="Dropoff Location"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="time"
-                name="time"
-                value={details.time}
-                onChange={handleChange}
-                placeholder="Enter Travel Time"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                required
-              />
+              {/* Passenger Details */}
+              <div>
+                <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                  Passenger Details
+                </h2>
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    name="name"
+                    value={details.name}
+                    onChange={handleChange}
+                    placeholder="Passenger Name"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <input
+                    type="number"
+                    name="age"
+                    value={details.age}
+                    onChange={handleChange}
+                    placeholder="Age"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="mobile"
+                    value={details.mobile}
+                    onChange={handleChange}
+                    placeholder="Mobile Number"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    value={details.email}
+                    onChange={handleChange}
+                    placeholder="Email Address"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Pickup and Dropoff Details */}
+              <div>
+                <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                  Ride Details
+                </h2>
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    name="pickup"
+                    value={details.pickup}
+                    onChange={handleChange}
+                    placeholder="Pickup Location"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="dropoff"
+                    value={details.dropoff}
+                    onChange={handleChange}
+                    placeholder="Dropoff Location"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                  <input
+                    type="time"
+                    name="time"
+                    value={details.time}
+                    onChange={handleChange}
+                    placeholder="Enter travel time"
+                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6">
-              <input type="checkbox" required className="mr-2" />
-              <label>
-                I agree to the <strong><Link href={"/terms-and-conditions"}>Terms and Conditions</Link></strong>.
-              </label>
-            </div>
+            <input type="checkbox" required className="mr-2 mt-6" />
+            <label>
+              I agree to the{" "}
+              <Link href={"/terms-and-conditions"}>
+                <strong>Terms and Conditions</strong>
+              </Link>
+              .
+            </label>
 
             <button
               type="submit"
@@ -151,21 +183,40 @@ const BookingReview = () => {
             </button>
           </form>
         ) : (
-          <div className="space-y-6">
-            <h2 className="text-lg font-semibold text-gray-700">Booking Summary</h2>
-            <div className="p-4 border border-gray-300 rounded-lg bg-gray-50">
-              <p><strong>Passenger Name:</strong> {details.name}</p>
-              <p><strong>Age:</strong> {details.age}</p>
-              <p><strong>Mobile:</strong> {details.mobile}</p>
-              <p><strong>Email:</strong> {details.email}</p>
-              <p><strong>Pickup Location:</strong> {details.pickup}</p>
-              <p><strong>Dropoff Location:</strong> {details.dropoff}</p>
-              <p><strong>Time:</strong> {details.time}</p>
+          <div>
+            {/* Booking Summary */}
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">
+              Booking Summary
+            </h2>
+            <div className="p-4 border rounded-lg bg-gray-50 space-y-4">
+              <p>
+                <strong>Passenger Name:</strong> {details.name}
+              </p>
+              <p>
+                <strong>Age:</strong> {details.age}
+              </p>
+              <p>
+                <strong>Mobile:</strong> {details.mobile}
+              </p>
+              <p>
+                <strong>Email:</strong> {details.email}
+              </p>
+              <p>
+                <strong>Pickup Location:</strong> {details.pickup}
+              </p>
+              <p>
+                <strong>Dropoff Location:</strong> {details.dropoff}
+              </p>
+              <p>
+                <strong>Time:</strong> {details.time}
+              </p>
             </div>
 
             {/* Advance Payment Options */}
             <div>
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Advance Payment Options</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                Advance Payment Options
+              </h2>
               <div className="space-y-4">
                 <label className="flex items-center space-x-3">
                   <input
@@ -192,23 +243,45 @@ const BookingReview = () => {
               </div>
             </div>
 
-            {/* Payment Method Options */}
-            <div>
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Select Payment Method</h2>
+            {/* Payment Options */}
+            <div className="mt-6">
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                Select Payment Method
+              </h2>
               <div className="space-y-4">
-                {["Credit Card", "Debit Card", "UPI", "Cash"].map((method) => (
-                  <label key={method} className="flex items-center space-x-3">
-                    <input
-                      type="radio"
-                      name="paymentMethod"
-                      value={method}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                      required
-                    />
-                    <span>{method}</span>
-                  </label>
-                ))}
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="Credit Card"
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    required
+                  />
+                  <span>Credit Card</span>
+                </label>
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="Debit Card"
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    required
+                  />
+                  <span>Debit Card</span>
+                </label>
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="UPI"
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    required
+                  />
+                  <span>UPI</span>
+                </label>
               </div>
             </div>
 
@@ -216,7 +289,7 @@ const BookingReview = () => {
               onClick={handlePaymentSubmit}
               className="mt-6 w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
             >
-              Confirm Booking
+              Payable Amount ₹{payableAmount || price}
             </button>
           </div>
         )}
@@ -225,4 +298,4 @@ const BookingReview = () => {
   );
 };
 
-export default BookingReview;
+export default ReviewBooking;

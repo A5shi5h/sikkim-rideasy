@@ -16,17 +16,17 @@ const NathulaSightseeing = () => {
   const cars = [
     {
       vehicles: [
-        { name: "Hatchback", price: "₹5500.00" , image: "/images/hatchback1.jpg" },
+        { name: "Hatchback", price: 5500 , image: "/images/hatchback1.jpg" },
       ],
     },
     {
       vehicles: [
-        { name: "Sedan", price: "₹4500.00", image: "/images/sedan1.jpg" },
+        { name: "Sedan", price: 4500 , image: "/images/sedan1.jpg" },
       ],
     },
     {
       vehicles: [
-        { name: "SUV", price: "₹4000.00", image: "/images/suv1.jpg" },
+        { name: "SUV", price: 4000 , image: "/images/suv1.jpg" },
       ],
     },
   ];
@@ -74,7 +74,7 @@ const NathulaSightseeing = () => {
                   >
                     <img src={car.image} alt={car.name} className="rounded-md mb-4" />
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{car.name}</h3>
-                    <p className="text-gray-600 text-lg mb-4">{car.price}</p>
+                    <p className="text-gray-600 text-lg mb-4">₹{car.price}</p>
                     <button
                       onClick={() => handleBookNow(car.name, car.price, car.image , date , destination)}
                       className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"

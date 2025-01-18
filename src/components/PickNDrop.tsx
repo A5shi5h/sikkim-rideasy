@@ -16,9 +16,9 @@ const PickNDrop = () => {
     const basePrices: Record<string, Record<string, number>> = {
       Bagdogra: { Gangtok: 4000, Darjeeling: 4000 },
       NJP: { Gangtok: 4000, Pelling: 3500 },
-      Siliguri: { Gangtok: 4000, Darjeeling: 4000 },
+      Siliguri: { Gangtok: 4000, Darjeeling: 4000 , Pelling: 4000},
       Darjeeling: { Gangtok: 3500, Siliguri: 4000 },
-      Pelling: { Gangtok: 4000, NJP: 4000 },
+      Pelling: { NJP: 4000 },
       Gangtok: { Bagdogra: 4000, NJP: 4000 , Darjeeling: 3500 , Siliguri: 4000 , Pelling: 3500},
     };
 
@@ -39,9 +39,13 @@ const PickNDrop = () => {
     const sedanAmount = calculateAmount(pickup, dropoff, "sedan");
 
     // Pass both amounts to the next page
-    router.push(
-      `/cars?pickup=${pickup}&dropoff=${dropoff}&date=${date}&hatchbackPrice=${hatchbackAmount}&sedanPrice=${sedanAmount}`
-    );
+    if(pickup === 'Pelling' && dropoff === 'Gangtok'){
+      router.push("/contact")
+    }else{
+      router.push(
+        `/cars?pickup=${pickup}&dropoff=${dropoff}&date=${date}&hatchbackPrice=${hatchbackAmount}&sedanPrice=${sedanAmount}`
+      );
+    }
   };
 
   return (

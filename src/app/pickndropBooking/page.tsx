@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const PichNDropBooking = () => {
   
@@ -13,13 +13,33 @@ const PichNDropBooking = () => {
     email: "",
     pickup: "",
     dropoff: "",
-    time: ""
+    time: "",
   });
 
   const [isEditing, setIsEditing] = useState(true);
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [paymentAdvance, setPaymentAdvance] = useState("");
+  const [payableAmount, setPayableAmount] = useState(0); // Store the calculated amount
 
-  const handleChange = (e:any) => {
+  const searchParams = useSearchParams();
+
+  const pickup = searchParams.get("pickup");
+  const dropoff = searchParams.get("dropoff");
+  const date = searchParams.get("date");
+  const car = searchParams.get("car");
+  const image = searchParams.get("image");
+  const price = parseFloat(searchParams.get("price") || "0"); // Convert to a number
+
+  useEffect(() => {
+    // Update payable amount based on the selected advance payment option
+    if (paymentAdvance === "Full Payment") {
+      setPayableAmount(price);
+    } else if (paymentAdvance === "50% Advance") {
+      setPayableAmount(price / 2);
+    }
+  }, [paymentAdvance, price]);
+
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setDetails((prev) => ({
       ...prev,
@@ -27,7 +47,7 @@ const PichNDropBooking = () => {
     }));
   };
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     setIsEditing(false); // Move to the summary page
   };
@@ -37,40 +57,40 @@ const PichNDropBooking = () => {
       alert("Please select a payment method!");
       return;
     }
-    alert(`Booking Confirmed!\nDetails: ${JSON.stringify(details)}\nPayment Method: ${paymentMethod}`);
+    alert(
+      `Booking Confirmed!\nDetails: ${JSON.stringify(
+        details
+      )}\nAdvance Payment: ${paymentAdvance}\nPayable Amount: ₹${payableAmount}\nPayment Method: ${paymentMethod}`
+    );
   };
-
-    const searchParams = useSearchParams();
-
-    const pickup = searchParams.get('pickup');
-    const dropoff = searchParams.get('dropoff');
-    const date = searchParams.get('date');
-    const car = searchParams.get('car');
-    const image = searchParams.get('image');
-    const price = searchParams.get('price');
 
   return (
     <section className="bg-gray-100 min-h-screen pt-36 p-8 md:p-[10rem]">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Review and Confirm Your Booking</h1>
-        <img 
-          src={image || '/images/default.jpg'} 
-          alt={car || 'Selected Car'} 
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          Review and Confirm Your Booking
+        </h1>
+        <img
+          src={image || "/images/default.jpg"}
+          alt={car || "Selected Car"}
+          className="mb-6 rounded-lg"
         />
         <p className="text-xl mb-6 text-center">
-        <strong>Vehicle:</strong> {car || 'N/A'} <br />
-        <strong>Pick Up:</strong> {pickup || 'N/A'} <br />
-        <strong>Drop Off:</strong> {dropoff || 'N/A'}<br/>
-        <strong>Date:</strong> {date || 'N/A'}<br/>
-        <strong>Amount:</strong> ₹{price || 'N/A'}
-      </p>
+          <strong>Vehicle:</strong> {car || "N/A"} <br />
+          <strong>Pick Up:</strong> {pickup || "N/A"} <br />
+          <strong>Drop Off:</strong> {dropoff || "N/A"} <br />
+          <strong>Date:</strong> {date || "N/A"} <br />
+          <strong>Amount:</strong> ₹{price || "N/A"}
+        </p>
 
         {isEditing ? (
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Passenger Details */}
               <div>
-                <h2 className="text-lg font-semibold text-gray-700 mb-4">Passenger Details</h2>
+                <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                  Passenger Details
+                </h2>
                 <div className="space-y-4">
                   <input
                     type="text"
@@ -113,7 +133,9 @@ const PichNDropBooking = () => {
 
               {/* Pickup and Dropoff Details */}
               <div>
-                <h2 className="text-lg font-semibold text-gray-700 mb-4">Ride Details</h2>
+                <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                  Ride Details
+                </h2>
                 <div className="space-y-4">
                   <input
                     type="text"
@@ -138,7 +160,7 @@ const PichNDropBooking = () => {
                     name="time"
                     value={details.time}
                     onChange={handleChange}
-                    placeholder="Enter travel date"
+                    placeholder="Enter travel time"
                     className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
@@ -148,7 +170,11 @@ const PichNDropBooking = () => {
 
             <input type="checkbox" required className="mr-2 mt-6" />
             <label>
-              I agree to the <Link href={"/terms-and-conditions"}><strong>Terms and Conditions</strong></Link>.
+              I agree to the{" "}
+              <Link href={"/terms-and-conditions"}>
+                <strong>Terms and Conditions</strong>
+              </Link>
+              .
             </label>
 
             <button
@@ -161,26 +187,69 @@ const PichNDropBooking = () => {
         ) : (
           <div>
             {/* Booking Summary */}
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Booking Summary</h2>
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">
+              Booking Summary
+            </h2>
             <div className="p-4 border rounded-lg bg-gray-50 space-y-4">
-              <p><strong>Passenger Name:</strong> {details.name}</p>
-              <p><strong>Age:</strong> {details.age}</p>
-              <p><strong>Mobile:</strong> {details.mobile}</p>
-              <p><strong>Email:</strong> {details.email}</p>
-              <p><strong>Pickup Location:</strong> {details.pickup}</p>
-              <p><strong>Dropoff Location:</strong> {details.dropoff}</p>
+              <p>
+                <strong>Passenger Name:</strong> {details.name}
+              </p>
+              <p>
+                <strong>Age:</strong> {details.age}
+              </p>
+              <p>
+                <strong>Mobile:</strong> {details.mobile}
+              </p>
+              <p>
+                <strong>Email:</strong> {details.email}
+              </p>
+              <p>
+                <strong>Pickup Location:</strong> {details.pickup}
+              </p>
+              <p>
+                <strong>Dropoff Location:</strong> {details.dropoff}
+              </p>
+              <p>
+                <strong>Time:</strong> {details.time}
+              </p>
             </div>
 
-            <button
-              className="mt-4 bg-gray-500 text-white py-2 px-6 rounded-lg hover:bg-gray-600 transition"
-              onClick={() => setIsEditing(true)}
-            >
-              Edit Details
-            </button>
+            {/* Advance Payment Options */}
+            <div>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                Advance Payment Options
+              </h2>
+              <div className="space-y-4">
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="paymentAdvance"
+                    value="Full Payment"
+                    onChange={(e) => setPaymentAdvance(e.target.value)}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    required
+                  />
+                  <span>Advance Full Payment</span>
+                </label>
+                <label className="flex items-center space-x-3">
+                  <input
+                    type="radio"
+                    name="paymentAdvance"
+                    value="50% Advance"
+                    onChange={(e) => setPaymentAdvance(e.target.value)}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                    required
+                  />
+                  <span>50% Advance Payment</span>
+                </label>
+              </div>
+            </div>
 
             {/* Payment Options */}
             <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Select Payment Method</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">
+                Select Payment Method
+              </h2>
               <div className="space-y-4">
                 <label className="flex items-center space-x-3">
                   <input
@@ -222,7 +291,7 @@ const PichNDropBooking = () => {
               onClick={handlePaymentSubmit}
               className="mt-6 w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
             >
-              Confirm Booking
+              Payable Amount ₹{payableAmount || price}
             </button>
           </div>
         )}
