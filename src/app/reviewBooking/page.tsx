@@ -23,11 +23,11 @@ const ReviewBooking = () => {
 
   const searchParams = useSearchParams();
 
-  const destination = searchParams.get('destination');
-  const date = searchParams.get("date");
-  const carType = searchParams.get("vehicle");
-  const image = searchParams.get("image");
-  const price = parseFloat(searchParams.get("price") || "0"); // Convert to a number
+  const destination = searchParams ? searchParams.get('destination') : null;
+  const date = searchParams ? searchParams.get("date") : null;
+  const carType = searchParams ? searchParams.get("vehicle") : null;
+  const image = searchParams ? searchParams.get("image") : null;
+  const price = parseFloat(searchParams?.get("price") || "0"); // Convert to a number
 
   useEffect(() => {
     // Update payable amount based on the selected advance payment option

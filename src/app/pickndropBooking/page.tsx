@@ -23,12 +23,12 @@ const PichNDropBooking = () => {
 
   const searchParams = useSearchParams();
 
-  const pickup = searchParams.get("pickup");
-  const dropoff = searchParams.get("dropoff");
-  const date = searchParams.get("date");
-  const car = searchParams.get("car");
-  const image = searchParams.get("image");
-  const price = parseFloat(searchParams.get("price") || "0"); // Convert to a number
+  const pickup = searchParams ? searchParams.get('pickup') : null;
+  const dropoff = searchParams ? searchParams.get("dropoff") : null;
+  const date = searchParams ? searchParams.get("date") : null;
+  const car = searchParams ? searchParams.get("car") : null;
+  const image = searchParams ? searchParams.get("image") : null;
+  const price = parseFloat(searchParams?.get("price") || "0") // Convert to a number
 
   useEffect(() => {
     // Update payable amount based on the selected advance payment option
