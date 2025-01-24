@@ -15,13 +15,14 @@ function EnquireUs() {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/sendEmail  ', {
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name, number, email, message }),
       });
+      console.log(response.body)
 
       if (response.ok) {
         alert('Message sent successfully!');

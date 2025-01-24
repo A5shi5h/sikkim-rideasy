@@ -15,17 +15,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     // Configure the email transporter
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Use your email provider or SMTP server
+      host: 'smtp.gmail.com', // Use Gmail's SMTP server
+      port: 465,             // Secure SMTP port
+      secure: true,          // Use SSL/TLS
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password or app password
-      },
+        user: process.env.EMAIL_USER, // Your email
+        pass: process.env.EMAIL_PASS, // Your app password (not your actual password)
+  },
     });
 
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER, // Sender's email
-      to: 'ashish23jordson@gmail.com', // Replace with your email address
+      to: process.env.EMAIL_USER, // Replace with your email address
       subject: 'New Enquiry',
       text: `
         Name: ${name}
