@@ -213,77 +213,143 @@ const ReviewBooking = () => {
             </div>
 
             {/* Advance Payment Options */}
-            <div>
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">
+            <div className="mt-6">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">
                 Advance Payment Options
               </h2>
-              <div className="space-y-4">
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="paymentAdvance"
-                    value="Full Payment"
-                    onChange={(e) => setPaymentAdvance(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                    required
-                  />
-                  <span>Advance Full Payment</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label
+                  className={`p-6 border rounded-lg cursor-pointer transition ${
+                    paymentAdvance === "Full Payment"
+                      ? "border-green-500 bg-green-50"
+                      : "border-gray-300"
+                  }`}
+                  onClick={() => setPaymentAdvance("Full Payment")}
+                >
+                  <div className="flex items-center mb-2">
+                    <div
+                      className={`w-6 h-6 flex items-center justify-center rounded-full border-2 ${
+                        paymentAdvance === "Full Payment"
+                          ? "border-green-500 bg-green-500 text-white"
+                          : "border-gray-400"
+                      }`}
+                    >
+                      {paymentAdvance === "Full Payment" && <span>&#10003;</span>}
+                    </div>
+                    <div className="ml-3 text-green-600 font-semibold">SIKKIM RIDEASY</div>
+                  </div>
+                  <p className="text-sm text-gray-600">Pay full payment in advance</p>
+                  <p className="text-2xl font-bold text-green-500 mt-2">₹{price}</p>
                 </label>
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="paymentAdvance"
-                    value="50% Advance"
-                    onChange={(e) => setPaymentAdvance(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                    required
-                  />
-                  <span>50% Advance Payment</span>
+
+                {/* Regular Option */}
+                <label
+                  className={`p-6 border rounded-lg cursor-pointer transition ${
+                    paymentAdvance === "50% Advance"
+                      ? "border-yellow-500 bg-yellow-50"
+                      : "border-gray-300"
+                  }`}
+                  onClick={() => setPaymentAdvance("50% Advance")}
+                >
+                  <div className="flex items-center mb-2">
+                    <div
+                      className={`w-6 h-6 flex items-center justify-center rounded-full border-2 ${
+                        paymentAdvance === "50% Advance"
+                          ? "border-yellow-500 bg-yellow-500 text-white"
+                          : "border-gray-400"
+                      }`}
+                    >
+                      {paymentAdvance === "50% Advance" && <span>&#10003;</span>}
+                    </div>
+                    <div className="ml-3 text-yellow-600 font-semibold">SIKKIM RIDEASY</div>
+                  </div>
+                  <p className="text-sm text-gray-600">Pay half payment in advance</p>
+                  <p className="text-2xl font-bold text-gray-800 mt-2">
+                    ₹{(price / 2).toFixed(2)}
+                  </p>
                 </label>
               </div>
             </div>
 
             {/* Payment Options */}
-            <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">
-                Select Payment Method
-              </h2>
-              <div className="space-y-4">
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="Credit Card"
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                    required
-                  />
-                  <span>Credit Card</span>
-                </label>
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="Debit Card"
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                    required
-                  />
-                  <span>Debit Card</span>
-                </label>
-                <label className="flex items-center space-x-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    value="UPI"
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                    required
-                  />
-                  <span>UPI</span>
-                </label>
+            <div className="mt-8">
+                <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                  Select Payment Method
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Credit Card */}
+                  <label
+                    className={`p-6 border rounded-lg cursor-pointer transition ${
+                      paymentMethod === "Credit Card"
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-300"
+                    }`}
+                    onClick={() => setPaymentMethod("Credit Card")}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div
+                        className={`w-6 h-6 flex items-center justify-center rounded-full border-2 ${
+                          paymentMethod === "Credit Card"
+                            ? "border-blue-500 bg-blue-500 text-white"
+                            : "border-gray-400"
+                        }`}
+                      >
+                        {paymentMethod === "Credit Card" && <span>&#10003;</span>}
+                      </div>
+                      <div className="ml-3 text-blue-600 font-semibold">Credit Card</div>
+                    </div>
+                    <p className="text-sm text-gray-600">Pay securely using your credit card.</p>
+                  </label>
+
+                  {/* Debit Card */}
+                  <label
+                    className={`p-6 border rounded-lg cursor-pointer transition ${
+                      paymentMethod === "Debit Card"
+                        ? "border-purple-500 bg-purple-50"
+                        : "border-gray-300"
+                    }`}
+                    onClick={() => setPaymentMethod("Debit Card")}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div
+                        className={`w-6 h-6 flex items-center justify-center rounded-full border-2 ${
+                          paymentMethod === "Debit Card"
+                            ? "border-purple-500 bg-purple-500 text-white"
+                            : "border-gray-400"
+                        }`}
+                      >
+                        {paymentMethod === "Debit Card" && <span>&#10003;</span>}
+                      </div>
+                      <div className="ml-3 text-purple-600 font-semibold">Debit Card</div>
+                    </div>
+                    <p className="text-sm text-gray-600">Pay directly from your bank account.</p>
+                  </label>
+
+                  {/* UPI */}
+                  <label
+                    className={`p-6 border rounded-lg cursor-pointer transition ${
+                      paymentMethod === "UPI"
+                        ? "border-green-500 bg-green-50"
+                        : "border-gray-300"
+                    }`}
+                    onClick={() => setPaymentMethod("UPI")}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div
+                        className={`w-6 h-6 flex items-center justify-center rounded-full border-2 ${
+                          paymentMethod === "UPI"
+                            ? "border-green-500 bg-green-500 text-white"
+                            : "border-gray-400"
+                        }`}
+                      >
+                        {paymentMethod === "UPI" && <span>&#10003;</span>}
+                      </div>
+                      <div className="ml-3 text-green-600 font-semibold">UPI</div>
+                    </div>
+                    <p className="text-sm text-gray-600">Fast and easy payment using UPI.</p>
+                  </label>
+                </div>
               </div>
-            </div>
 
             <button
               onClick={handlePaymentSubmit}
