@@ -50,7 +50,7 @@ function Navbar({ className }: { className?: string }) {
           <Link href="/" className="hover:text-slate-500">
             Home
           </Link>
-          <Link href="/packages" className="hover:text-slate-500">
+          <Link href="/taxi-packages" className="hover:text-slate-500">
             Taxi Packages
           </Link>
           <Link href="/gallery" className="hover:text-slate-500">
