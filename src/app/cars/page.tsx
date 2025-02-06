@@ -9,11 +9,11 @@ const CarsPage = () => {
   const searchParams = useSearchParams();
 
   // Form details
-  const pickup = searchParams.get('pickup');
-  const dropoff = searchParams.get('dropoff');
-  const date = searchParams.get('date');
-  const hatchbackAmount = searchParams.get('hatchbackPrice'); 
-  const sedanAmount = searchParams.get('sedanPrice');
+  const pickup = searchParams ? searchParams.get('pickup') : null;
+  const dropoff = searchParams ?searchParams.get('dropoff') : null;
+  const date = searchParams ? searchParams.get('date') : null;
+  const hatchbackAmount = searchParams ? searchParams.get('hatchbackPrice') : null; 
+  const sedanAmount = searchParams ? searchParams.get('sedanPrice') : null;
 
   const cars = [
     { name: 'Hatchback', image: '/images/hatchback1.jpg', price: hatchbackAmount },

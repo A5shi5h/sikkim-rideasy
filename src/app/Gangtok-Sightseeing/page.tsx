@@ -23,8 +23,8 @@ const GangtokSightseeing = () => {
 
   const searchParams = useSearchParams();
 
-  const destination = searchParams.get('destination');
-  const date = searchParams.get('date');
+  const destination = searchParams ? searchParams.get('destination') : null;
+  const date = searchParams ? searchParams.get('date') : null;
 
   const handleBookNow = (carType:any, image:any, date:any , destination:any , price:any) => {
     router.push(`/reviewBooking?vehicle=${carType}&image=${image}&date=${date}&destination=${destination}&price=${price}`);

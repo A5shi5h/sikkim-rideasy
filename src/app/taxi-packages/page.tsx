@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const packages = [
@@ -102,7 +104,7 @@ const TaxiPackages = () => {
                   <div className="flex justify-between items-center border p-2 rounded-md">
                     <span className="text-gray-600 ">Hatchback(4 Seater)</span>
                     <span className="text-red-600 font-bold text-center flex-1">₹{pkg.hatchback}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <button className="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-green-600">
                       Book Now
                     </button>
                   </div>
@@ -110,8 +112,8 @@ const TaxiPackages = () => {
                 {pkg.suvPrice && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
                     <span className="text-gray-600">Sedan(4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.suvPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.sedanPrice}</span>
+                    <button className="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-green-600">
                       Book Now
                     </button>
                   </div>
@@ -119,8 +121,8 @@ const TaxiPackages = () => {
                 {pkg.sedanPrice && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
                     <span className="text-gray-600">SUV(4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.sedanPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.suvPrice}</span>
+                    <button className="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-green-600">
                       Book Now
                     </button>
                   </div>
@@ -129,7 +131,7 @@ const TaxiPackages = () => {
                   <div className="flex justify-between items-center border p-2 rounded-md">
                     <span className="text-gray-600">MUV (6-7 Seater)</span>
                     <span className="text-red-600 font-bold text-center flex-1">₹{pkg.muvPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <button className="bg-green-500 text-white px-4 py-1 rounded-md hover:bg-green-600">
                       Book Now
                     </button>
                   </div>
@@ -137,7 +139,7 @@ const TaxiPackages = () => {
               </div>
               <div className="flex space-x-2 mt-4">
                 <button className="bg-gray-800 text-white px-4 py-2 rounded-md">View Details</button>
-                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">Send Enquiry</button>
+                <Link href={"enquire"}><button className="bg-yellow-500 text-white px-4 py-2 rounded-md">Send Enquiry</button></Link>
               </div>
             </div>
           </div>
