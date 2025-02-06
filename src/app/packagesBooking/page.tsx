@@ -23,7 +23,7 @@ const PackageBooking = () => {
 
   const searchParams = useSearchParams();
 
-  const destination = searchParams ? searchParams.get('title') : null;
+  const destination = searchParams ? searchParams.get('destination') : null;
   const carType = searchParams ? searchParams.get("vehicle") : null;
   const image = searchParams ? searchParams.get("image") : null;
   const price = parseFloat(searchParams?.get("price") || "0"); // Convert to a number
@@ -74,8 +74,8 @@ const PackageBooking = () => {
           className="mb-6 rounded-lg"
         />
         <p className="text-xl mb-6 text-center">
-          <strong>Vehicle:</strong> {carType || "N/A"} <br />
           <strong>Destination:</strong> {destination || "N/A"} <br />
+          <strong>Vehicle:</strong> {carType || "N/A"} <br />
           <strong>Amount:</strong> ₹{price || "N/A"}
         </p>
 

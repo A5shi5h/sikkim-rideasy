@@ -6,150 +6,253 @@ import React from "react";
 const packages = [
   {
     id: "GTK001",
-    title: "Gangtok",
+    destination: "Gangtok",
     nights: 2,
     days: 3,
     image: "./images/gangtok.jpg", // Replace with actual image URL
-    hatchback: 13000,
-    suvPrice: 14500,
-    sedanPrice: 16000,
+    hatchback : {
+       name : "hatchback",
+       price : 13000,
+       image : "./images/hatchback1.jpg"
+    },
+    sedan: {
+      name : "sedan",
+      price : 14500,
+      image : "./images/sedan1.jpg",
+    },
+    suv: {
+      name : "suv",
+      price : 16000,
+      image : "./images/suv1.jpg"
+    },
   },
   {
     id: "GTK002",
-    title: "Gangtok",
+    destination: "Gangtok",
     nights: 3,
     days: 4,
     image: "./images/gangtok2.jpg", // Replace with actual image URL
-    hatchback: 16000,
-    suvPrice: 18000,
-    sedanPrice: 22000,
+    hatchback : {
+      name : "hatchback",
+      price : 16000,
+      image : "./images/hatchback1.jpg"
+   },
+   sedan: {
+     name : "sedan",
+     price : 18000,
+     image : "./images/sedan1.jpg",
+   },
+   suv: {
+     name : "suv",
+     price : 22000,
+     image : "./images/suv1.jpg"
+   },
   },
   {
     id: "GTK003",
-    title: "Gangtok-Namchi",
+    destination: "Gangtok-Namchi",
     nights: 4,
     days: 5,
     image: "./images/namchi2.jpg", // Replace with actual image URL
-    hatchback: 20000,
-    suvPrice: 22500,
-    sedanPrice: 27500,
+    hatchback : {
+      name : "hatchback",
+      price : 20000,
+      image : "./images/hatchback1.jpg"
+   },
+   sedan: {
+     name : "sedan",
+     price : 22500,
+     image : "./images/sedan1.jpg",
+   },
+   suv: {
+     name : "suv",
+     price : 27500,
+     image : "./images/suv1.jpg"
+   },
   },
   {
     id: "GTK004",
-    title: "Gangtok-Namchi-Pelling",
+    destination: "Gangtok-Namchi-Pelling",
     nights: 5,
     days: 6,
     image: "./images/pelling2.jpg", // Replace with actual image URL
-    hatchback: 24000,
-    suvPrice: 33000,
-    sedanPrice: 27000,
+    hatchback : {
+      name : "hatchback",
+      price : 24000,
+      image : "./images/hatchback1.jpg"
+   },
+   sedan: {
+    name : "sedan",
+     price : 27000,
+     image : "./images/sedan1.jpg",
+   },
+   suv: {
+    name : "suv",
+     price : 33000,
+     image : "./images/suv1.jpg"
+   },
   },
   {
     id: "GTK005",
-    title: "Lachung",
+    destination: "Lachung",
     nights: 1,
     days: 2,
     image: "./images/lachung.jpg", // Replace with actual image URL
-    suvPrice: 13000,
-    muvPrice: 12000,
+    suv: {
+      name : "suv",
+      price : 13000,
+      image : "./images/suv1.jpg"
+    },
+    muv: {
+      name : "muv",
+      price : 12000,
+      image : "./images/muv1.jpg"
+    },
   },
   {
     id: "GTK006",
-    title: "Lachen-Lachung",
+    destination: "Lachen-Lachung",
     nights: 2,
     days: 3,
     image: "./images/lachen.jpg", // Replace with actual image URL
-    suvPrice: 19500,
-    muvPrice: 18000,
+    suv: {
+      name : "suv",
+      price : 19500,
+      image : "./images/suv1.jpg"
+    },
+    muv: {
+      name : "muv",
+      price : 18000,
+      image : "./images/muv1.jpg"
+    },
   },
   {
     id: "GTK007",
-    title: "Super North",
+    destination: "Super North",
     nights: 4,
     days: 5,
     image: "./images/north sikkim.jpg", // Replace with actual image URL
-    suvPrice: 30500,
-    muvPrice: 28000,
+    suv: {
+      name : "suv",
+      price : 30500,
+      image : "./images/suv1.jpg"
+    },
+    muv: {
+      name : "muv",
+      price : 28000,
+      image : "./images/muv1.jpg"
+    },
   },
   {
     id: "GTK008",
-    title: "Combo North",
+    destination: "Combo North",
     nights: 6,
     days: 7,
     image: "./images/north sikkim2.jpg", // Replace with actual image URL
-    suvPrice: 41500,
-    muvPrice: 40000,
+    suv: {
+      name : "suv",
+      price : 41500,
+      image : "./images/suv1.jpg"
+    },
+    muv: {
+      name : "muv",
+      price : 40000,
+      image : "./images/muv1.jpg"
+    },
   },
 ];
 
 const TaxiPackages = () => {
+  const router = useRouter();
 
-    const router = useRouter();
-
-    const handleBookNow = (title : any , price : any) => {
-        router.push(
-            `/packagesBooking?title=${title}&price=${price}
-            }`)
-    }
+  const handleBookNow = (destination : any, price : any , carType : any , image : any) => {
+    router.push(`/packagesBooking?destination=${destination}&price=${price}&vehicle=${carType}&image=${image}`);
+  };
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen pt-28">
       {packages.map((pkg) => (
         <div key={pkg.id} className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-xl font-bold text-blue-600">
-            {pkg.id} {pkg.title} | {pkg.nights} Nights {pkg.days} Days
+            {pkg.id} {pkg.destination} | {pkg.nights} Nights {pkg.days} Days
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mt-4">
             <img
               src={pkg.image}
-              alt={pkg.title}
+              alt={pkg.destination}
               className="w-full h-56 object-cover rounded-lg"
             />
             <div>
               <p className="text-gray-700 font-semibold">
-                {pkg.title} ({pkg.nights}N{pkg.days}D)
+                {pkg.destination} ({pkg.nights}N{pkg.days}D)
               </p>
               <div className="mt-3 space-y-2">
                 {pkg.hatchback && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600 ">Hatchback(4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.hatchback}</span>
-                    <button  onClick={() => handleBookNow(pkg.title , pkg.hatchback)} className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-gray-600">Hatchback (4 Seater)</span>
+                    <span className="text-red-600 font-bold text-center flex-1">
+                      ₹{pkg.hatchback.price}
+                    </span>
+                    <button
+                      onClick={() =>
+                        handleBookNow(pkg.destination, pkg.hatchback.price , pkg.hatchback.name , pkg.hatchback.image)
+                      }
+                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                    >
                       Book Now
                     </button>
                   </div>
                 )}
-                {pkg.suvPrice && (
+                {pkg.sedan && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">Sedan(4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.suvPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-gray-600">Sedan (4 Seater)</span>
+                    <span className="text-red-600 font-bold text-center flex-1">
+                      ₹{pkg.sedan.price}
+                    </span>
+                    <button
+                      onClick={() => handleBookNow(pkg.destination, pkg.sedan.price , pkg.sedan.name , pkg.sedan.image)}
+                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                    >
                       Book Now
                     </button>
                   </div>
                 )}
-                {pkg.sedanPrice && (
+                {pkg.suv && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">SUV(4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.sedanPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-gray-600">SUV (4 Seater)</span>
+                    <span className="text-red-600 font-bold text-center flex-1">
+                      ₹{pkg.suv.price}
+                    </span>
+                    <button
+                      onClick={() => handleBookNow(pkg.destination, pkg.suv.price , pkg.suv.name , pkg.suv.image)}
+                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                    >
                       Book Now
                     </button>
                   </div>
                 )}
-                {pkg.muvPrice && (
+                {pkg.muv && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
                     <span className="text-gray-600">MUV (6-7 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">₹{pkg.muvPrice}</span>
-                    <button className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600">
+                    <span className="text-red-600 font-bold text-center flex-1">
+                      ₹{pkg.muv.price}
+                    </span>
+                    <button
+                      onClick={() => handleBookNow(pkg.destination, pkg.muv.price , pkg.muv.name , pkg.muv.image)}
+                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                    >
                       Book Now
                     </button>
                   </div>
                 )}
               </div>
               <div className="flex space-x-2 mt-4">
-                <button className="bg-gray-800 text-white px-4 py-2 rounded-md">View Details</button>
-                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">Send Enquiry</button>
+                <button className="bg-gray-800 text-white px-4 py-2 rounded-md">
+                  View Details
+                </button>
+                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+                  Send Enquiry
+                </button>
               </div>
             </div>
           </div>
