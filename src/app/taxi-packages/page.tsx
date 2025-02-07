@@ -2,7 +2,7 @@
 
 import Footer from "@/components/Footer";
 import TagLine from "@/components/TagLine";
-import Instructors from "@/components/TagLine";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -12,7 +12,7 @@ const packages = [
     destination: "Gangtok",
     nights: 2,
     days: 3,
-    image: "./images/gangtok.jpg", // Replace with actual image URL
+    image: "./images/gangtok.jpg", 
     hatchback : {
        name : "hatchback",
        price : 13000,
@@ -31,10 +31,10 @@ const packages = [
   },
   {
     id: "GTK002",
-    destination: "Gangtok",
+    destination: "Gangtok2",
     nights: 3,
     days: 4,
-    image: "./images/gangtok2.jpg", // Replace with actual image URL
+    image: "./images/gangtok2.jpg", 
     hatchback : {
       name : "hatchback",
       price : 16000,
@@ -56,7 +56,7 @@ const packages = [
     destination: "Gangtok-Namchi",
     nights: 4,
     days: 5,
-    image: "./images/namchi2.jpg", // Replace with actual image URL
+    image: "./images/namchi2.jpg", 
     hatchback : {
       name : "hatchback",
       price : 20000,
@@ -78,7 +78,7 @@ const packages = [
     destination: "Gangtok-Namchi-Pelling",
     nights: 5,
     days: 6,
-    image: "./images/pelling2.jpg", // Replace with actual image URL
+    image: "./images/pelling2.jpg",
     hatchback : {
       name : "hatchback",
       price : 24000,
@@ -100,7 +100,7 @@ const packages = [
     destination: "Lachung",
     nights: 1,
     days: 2,
-    image: "./images/lachung.jpg", // Replace with actual image URL
+    image: "./images/lachung.jpg", 
     suv: {
       name : "suv",
       price : 13000,
@@ -117,7 +117,7 @@ const packages = [
     destination: "Lachen-Lachung",
     nights: 2,
     days: 3,
-    image: "./images/lachen.jpg", // Replace with actual image URL
+    image: "./images/lachen.jpg", 
     suv: {
       name : "suv",
       price : 19500,
@@ -134,7 +134,7 @@ const packages = [
     destination: "Super North",
     nights: 4,
     days: 5,
-    image: "./images/north sikkim.jpg", // Replace with actual image URL
+    image: "./images/north sikkim.jpg", 
     suv: {
       name : "suv",
       price : 30500,
@@ -151,7 +151,7 @@ const packages = [
     destination: "Combo North",
     nights: 6,
     days: 7,
-    image: "./images/north sikkim2.jpg", // Replace with actual image URL
+    image: "./images/north sikkim2.jpg", 
     suv: {
       name : "suv",
       price : 41500,
@@ -166,6 +166,7 @@ const packages = [
 ];
 
 const TaxiPackages = () => {
+  
   const router = useRouter();
 
   const handleBookNow = (destination : any, price : any , carType : any , image : any) => {
@@ -193,7 +194,7 @@ const TaxiPackages = () => {
               <div className="mt-3 space-y-2">
                 {pkg.hatchback && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">Hatchback (4 Seater)</span>
+                    <span className="text-gray-600 text-sm">Hatchback (4 Seater)</span>
                     <span className="text-red-600 font-bold text-center flex-1">
                       ₹{pkg.hatchback.price}
                     </span>
@@ -201,7 +202,7 @@ const TaxiPackages = () => {
                       onClick={() =>
                         handleBookNow(pkg.destination, pkg.hatchback.price , pkg.hatchback.name , pkg.hatchback.image)
                       }
-                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
                     >
                       Book Now
                     </button>
@@ -215,7 +216,7 @@ const TaxiPackages = () => {
                     </span>
                     <button
                       onClick={() => handleBookNow(pkg.destination, pkg.sedan.price , pkg.sedan.name , pkg.sedan.image)}
-                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
                     >
                       Book Now
                     </button>
@@ -229,7 +230,7 @@ const TaxiPackages = () => {
                     </span>
                     <button
                       onClick={() => handleBookNow(pkg.destination, pkg.suv.price , pkg.suv.name , pkg.suv.image)}
-                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                     className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
                     >
                       Book Now
                     </button>
@@ -243,7 +244,7 @@ const TaxiPackages = () => {
                     </span>
                     <button
                       onClick={() => handleBookNow(pkg.destination, pkg.muv.price , pkg.muv.name , pkg.muv.image)}
-                      className="bg-orange-500 text-white px-4 py-1 rounded-md hover:bg-orange-600"
+                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
                     >
                       Book Now
                     </button>
@@ -251,12 +252,12 @@ const TaxiPackages = () => {
                 )}
               </div>
               <div className="flex space-x-2 mt-4">
-                <button className="bg-gray-800 text-white px-4 py-2 rounded-md">
+                <Link href={pkg.destination.toLowerCase()}><button className="bg-gray-800 text-white px-4 py-2 rounded-md">
                   View Details
-                </button>
-                <button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+                </button></Link>
+                <Link href={"enquire"}><button className="bg-yellow-500 text-white px-4 py-2 rounded-md">
                   Send Enquiry
-                </button>
+                </button></Link>
               </div>
             </div>
           </div>
