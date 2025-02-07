@@ -2,29 +2,40 @@
 
 import TagLine from "@/components/TagLine";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const GangtokPackage = () => {
+
+  const destination = "Gangtok";
 
   const cars = [
     {
       type: "Hatchback",
-      price: "₹13000",
+      price: 13000,
       seats: "4 seater",
       image: "./images/hatchback1.jpg", 
     },
     {
       type: "Sedan",
-      price: "₹14500",
+      price: 14500,
       seats: "4 seater",
       image: "./images/sedan1.jpg", 
     },
     {
       type: "SUV",
-      price: "₹16000",
+      price: 16000,
       seats: "6 seater",
       image: "./images/suv1.jpg", 
     },
   ];
+
+  const router = useRouter();
+
+  const handleBookNow = (destination:any , vehicle:any , price:any , image:any) => 
+    router.push(
+    `/packagesBooking?destination=${destination}&vehicle=${vehicle}&price=${price}&image=${image}`
+  );
 
   return (
     <>
@@ -81,10 +92,13 @@ const GangtokPackage = () => {
               <img src={car.image} alt={car.type} className="w-full h-40 object-contain mb-4" />
               <h4 className="font-semibold text-lg">{car.type}</h4>
               <p className="text-gray-600">{car.seats}</p>
-              <p className="text-lg font-bold text-blue-600">{car.price}</p>
+              <p className="text-lg font-bold text-blue-600">₹{car.price}</p>
               <div className="flex justify-center mt-4 gap-2">
-                <button className="bg-green-500 hover:bg-green-600 p-4 text-sm rounded-lg">Book Now</button>
-                <button className="bg-blue-500 hover:bg-blue-600 p-4 text-sm rounded-lg">Send Enquiry</button>
+                <button onClick={() => handleBookNow(destination , car.type , car.price , car.image)}
+                  className="bg-green-500 hover:bg-green-600 p-4 text-sm rounded-lg">Book Now</button>
+                <Link href={"enquire"}>
+                    <button className="bg-blue-500 hover:bg-blue-600 p-4 text-sm rounded-lg">Send Enquiry</button>
+                </Link>
               </div>
             </div>
           ))}
