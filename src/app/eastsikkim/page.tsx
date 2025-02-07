@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import TagLine from "@/components/TagLine";
+import Instructors from "@/components/TagLine";
 import React from "react";
 
 const EastSikkim = () => {
@@ -111,7 +112,7 @@ const EastSikkim = () => {
       </div>
     </div>
   </div>
-  <Instructors/>
+  <TagLine/>
   <Footer/>
     </>
   );

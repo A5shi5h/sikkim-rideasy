@@ -1,5 +1,8 @@
 "use client";
 
+import Footer from "@/components/Footer";
+import TagLine from "@/components/TagLine";
+import Instructors from "@/components/TagLine";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -170,7 +173,8 @@ const TaxiPackages = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen pt-28">
+    <>
+     <div className="p-6 bg-gray-100 min-h-screen pt-28">
       {packages.map((pkg) => (
         <div key={pkg.id} className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <h2 className="text-xl font-bold text-blue-600">
@@ -259,6 +263,9 @@ const TaxiPackages = () => {
         </div>
       ))}
     </div>
+    <TagLine/>
+    <Footer/>
+    </>
   );
 };
 

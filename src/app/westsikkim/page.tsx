@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import TagLine from "@/components/TagLine";
+import Instructors from "@/components/TagLine";
 
 const WestSikkim = () => {
   const placesToVisit = [
@@ -108,7 +109,7 @@ const WestSikkim = () => {
         </div>
       </div>
     </div>
-    <Instructors/>
+    <TagLine/>
     <Footer/>
     </>
   );

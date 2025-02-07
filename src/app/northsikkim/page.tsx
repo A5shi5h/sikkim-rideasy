@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import TagLine from "@/components/TagLine";
+import Instructors from "@/components/TagLine";
 
 const NorthSikkim = () => {
   const placesToVisit = [
@@ -110,7 +111,7 @@ const NorthSikkim = () => {
 
       </div>
     </div>
-    <Instructors/>
+    <TagLine/>
     <Footer/>
     </>
   );

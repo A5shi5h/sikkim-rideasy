@@ -2,7 +2,8 @@
 import React from "react";
 import { Vortex } from "@/components/ui/vortex";
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import Instructors from "@/components/TagLine";
+import TagLine from "@/components/TagLine";
 
 const page = () => {
     return (
@@ -32,7 +33,7 @@ const page = () => {
           </div>
         </Vortex>
       </div>
-      <Instructors/>
+      <TagLine/>
       <Footer/>
       </>
       

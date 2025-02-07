@@ -1,7 +1,8 @@
 // gallery.js (Next.js page for Sikkim Rideasy)
 
 import Footer from '@/components/Footer';
-import Instructors from '@/components/Instructors';
+import Instructors from '@/components/TagLine';
+import TagLine from '@/components/TagLine';
 import Image from 'next/image';
 
 export default function Gallery() {
@@ -78,7 +79,7 @@ export default function Gallery() {
                 </div>
             </main>
         </div>
-        <Instructors/>
+        <TagLine/>
         <Footer/>
         </>
     );

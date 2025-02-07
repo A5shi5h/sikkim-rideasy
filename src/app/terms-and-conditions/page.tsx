@@ -1,9 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import TagLine from "@/components/TagLine";
+import Footer from "@/components/Footer";
 
 const TermsAndConditions = () => {
   return (
-    <section className="bg-gray-100 min-h-screen py-16 px-8 pt-28">
+    <>
+     <section className="bg-gray-100 min-h-screen py-16 px-8 pt-28">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
           Terms and Conditions
@@ -84,6 +87,9 @@ const TermsAndConditions = () => {
         </div>
       </div>
     </section>
+    <TagLine/>
+    <Footer/>
+    </>
   );
 };
 

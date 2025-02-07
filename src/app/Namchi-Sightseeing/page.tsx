@@ -1,7 +1,8 @@
 "use client"
 
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import TagLine from "@/components/TagLine";
+import Instructors from "@/components/TagLine";
 import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
@@ -17,8 +18,8 @@ const NamchiSightseeing = () => {
 
   const searchParams = useSearchParams();
 
-  const destination = searchParams.get('destination');
-  const date = searchParams.get('date');
+  const destination = searchParams ? searchParams.get('destination') : null;
+  const date = searchParams ? searchParams.get('date') : null;
 
   const handleBookNow = (carType:any, price:any, image:any, date:any , destination:any) => {
     router.push(`/reviewBooking?vehicle=${carType}&price=${price}&image=${image}&date=${date}&destination=${destination}&price=${price}`);
@@ -88,7 +89,7 @@ const NamchiSightseeing = () => {
           ))}
         </div>
       </div>
-      <Instructors />
+      <TagLine />
       <Footer />
     </>
   );

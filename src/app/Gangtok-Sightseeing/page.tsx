@@ -1,7 +1,8 @@
 'use client';
 
 import Footer from '@/components/Footer';
-import Instructors from '@/components/Instructors';
+import TagLine from '@/components/TagLine';
+import Instructors from '@/components/TagLine';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React from 'react';
 
@@ -94,7 +95,7 @@ const GangtokSightseeing = () => {
           ))}
         </div>
       </div>
-      <Instructors />
+      <TagLine />
       <Footer />
     </>
   );

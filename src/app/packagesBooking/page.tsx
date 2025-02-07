@@ -143,15 +143,6 @@ const PackageBooking = () => {
                     required
                   />
                   <input
-                    type="text"
-                    name="dropoff"
-                    value={details.dropoff}
-                    onChange={handleChange}
-                    placeholder="Dropoff Location"
-                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                  <input
                     type="time"
                     name="time"
                     value={details.time}

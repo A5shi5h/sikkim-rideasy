@@ -2,7 +2,8 @@ import React from "react";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import Footer from "@/components/Footer";
-import Instructors from "@/components/Instructors";
+import Instructors from "@/components/TagLine";
+import TagLine from "@/components/TagLine";
 
 const page = () => {
 
@@ -33,7 +34,7 @@ const page = () => {
         </p>
     </BackgroundLines>
     <AnimatedTestimonials testimonials={owner}/>;
-    <Instructors />
+    <TagLine />
     <Footer/>
     </>
   )

@@ -3,10 +3,10 @@ import FeaturedCourses from "@/components/FeaturedDestinations";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import HeroSection from "@/components/HeroSection";
-import Instructors from "@/components/Instructors";
 import { TabsDemo } from "@/components/TabsDemo";
 import MusicSchoolTestimonials from "@/components/TestimonialCards";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import TagLine from "@/components/TagLine";
 
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       <WhyChooseUs />
       <MusicSchoolTestimonials />
       <Gallery />
-      <Instructors />
+      <TagLine />
       <Footer />
     </main>
   );
