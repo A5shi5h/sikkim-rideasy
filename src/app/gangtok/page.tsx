@@ -41,7 +41,7 @@ const GangtokPackage = () => {
     <>
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
       {/* Header Section */}
-      <h1 className="text-xl font-bold text-blue-600">
+      <h1 className="text-xl font-bold text-red-600">
         GTK001 Gangtok | 2 Nights 3 Days
       </h1>
 
