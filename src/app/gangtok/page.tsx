@@ -95,9 +95,9 @@ const GangtokPackage = () => {
               <p className="text-lg font-bold text-blue-600">₹{car.price}</p>
               <div className="flex justify-center mt-4 gap-2">
                 <button onClick={() => handleBookNow(destination , car.type , car.price , car.image)}
-                  className="bg-green-500 hover:bg-green-600 p-4 text-sm rounded-lg">Book Now</button>
+                  className="bg-yellow-500 hover:bg-yellow-600 p-4 text-sm rounded-lg">Book Now</button>
                 <Link href={"enquire"}>
-                    <button className="bg-blue-500 hover:bg-blue-600 p-4 text-sm rounded-lg">Send Enquiry</button>
+                    <button className="bg-red-500 hover:bg-red-600 p-4 text-sm rounded-lg text-white">Send Enquiry</button>
                 </Link>
               </div>
             </div>
