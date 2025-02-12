@@ -115,36 +115,39 @@ const GangtokZulukPackage = () => {
           
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
-            <p className="mt-2 font-bold">Full day Tsomgo Lake Sightseeing</p>
+            <p className="mt-2 font-bold">Full day Tsomgo Lake and Zuluk</p>
             <ul className="list-disc pl-5 font-light">
               <li>Tsomgo Lake</li>
               <li>New Baba Mandir</li>
+              <li>Thambi View Point</li>
+              <li>Nathang Valley</li>
+              <li>Zig Zag Road</li>
+              <li>Old Baba Mandir</li>
               <li>Optional: Nathula Pass (extra charges apply)</li>
             </ul>
             <p className="font-light">Overnight stay at Gangtok.</p>
           </div>
+
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
-            <p className="mt-2 font-bold">Gangtok Sighseeing and drop to Namchi</p>
+            <p className="mt-2 font-bold">Full Day Gangtok Sightseeing</p>
             <ul className="list-disc pl-5 font-light">
-              <li>Namgyal Institute of Tibetology</li>
+              <li>Tashi View Point</li>
+              <li>Ganesh Tok</li>
+              <li>Hanuman Tok</li>
+              <li>Bakthang Water Falls</li>
+              <li>Banjhakri Falls</li>
               <li>Ropeway</li>
-              <li>Flower Show (Orchid)</li>
               <li>Do-Drul Chorten</li>
+              <li>Namgyal Institute of Tibetology</li>
+              <li>Flower Show (Orchid)</li>
               <li>Directorate of Handicraft & Handloom</li>
             </ul>
+            <p className="font-light">Overnight stay at Gangtok</p>
           </div>
-          <div className="mb-4">
-            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 4</h3>
-            <p className="mt-2 font-bold">Namchi Sightseeing</p>
-            <ul className="list-disc pl-5 font-light">
-              <li>Samdruptse Monastry</li>
-              <li>Char Dham</li>
-              <li>Optional: Ravangla (extra charges apply)</li>
-            </ul>
-          </div>
+
           <div>
-            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 5</h3>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 4</h3>
             <p className="mt-2 font-bold">NJP , Bagdogra , Darjeeling drop</p>
             <ul className="list-disc pl-5 font-light">
               <li>End of tour</li>
