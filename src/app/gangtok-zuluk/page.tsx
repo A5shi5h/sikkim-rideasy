@@ -5,26 +5,26 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Gangtok2Package = () => {
+const GangtokZulukPackage = () => {
 
-  const destination = "Gangtok";
+  const destination = "Gangtok-Zuluk";
 
   const cars = [
     {
       type: "Hatchback",
-      price: 16000,
+      price: 17000,
       seats: "4 seater",
       image: "./images/hatchback1.jpg", 
     },
     {
       type: "Sedan",
-      price: 18000,
+      price: 19000,
       seats: "4 seater",
       image: "./images/sedan1.jpg", 
     },
     {
       type: "SUV",
-      price: 22000,
+      price: 23000,
       seats: "6 seater",
       image: "./images/suv1.jpg", 
     },
@@ -42,7 +42,7 @@ const Gangtok2Package = () => {
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
       {/* Header Section */}
       <h1 className="text-xl font-bold text-red-600">
-        GTK002 Gangtok | 3 Nights 4 Days
+        GTK003 Gangtok-Zuluk | 3 Nights 4 Days
       </h1>
 
       {/* Package Inclusions */}
@@ -115,7 +115,7 @@ const Gangtok2Package = () => {
           
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
-            <p className="mt-2 font-bold">Full day Tsomgo Lake and New Baba Mandir Sightseeing</p>
+            <p className="mt-2 font-bold">Full day Tsomgo Lake Sightseeing</p>
             <ul className="list-disc pl-5 font-light">
               <li>Tsomgo Lake</li>
               <li>New Baba Mandir</li>
@@ -123,31 +123,33 @@ const Gangtok2Package = () => {
             </ul>
             <p className="font-light">Overnight stay at Gangtok.</p>
           </div>
-
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
-            <p className="mt-2 font-bold">Half Day Gangtok Sightseeing and drop</p>
+            <p className="mt-2 font-bold">Gangtok Sighseeing and drop to Namchi</p>
             <ul className="list-disc pl-5 font-light">
-              <li>Tashi View Point</li>
-              <li>Ganesh Tok</li>
-              <li>Hanuman Tok</li>
-              <li>Bakthang Water Falls</li>
-              <li>Banjhakri Falls</li>
-              <li>Ropeway</li>
-              <li>Do-Drul Chorten</li>
               <li>Namgyal Institute of Tibetology</li>
+              <li>Ropeway</li>
               <li>Flower Show (Orchid)</li>
+              <li>Do-Drul Chorten</li>
               <li>Directorate of Handicraft & Handloom</li>
             </ul>
-            <p className="font-light">Overnight stay at Gangtok</p>
           </div>
-
-          <div>
+          <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 4</h3>
-            <p className="mt-2 font-bold">Gangtok to Bagdogra Airport/Pakyong Airport/New Jalpaiguri Railway Station/Siliguri</p>
-            <p className="font-light">End of tour</p>
+            <p className="mt-2 font-bold">Namchi Sightseeing</p>
+            <ul className="list-disc pl-5 font-light">
+              <li>Samdruptse Monastry</li>
+              <li>Char Dham</li>
+              <li>Optional: Ravangla (extra charges apply)</li>
+            </ul>
           </div>
-
+          <div>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 5</h3>
+            <p className="mt-2 font-bold">NJP , Bagdogra , Darjeeling drop</p>
+            <ul className="list-disc pl-5 font-light">
+              <li>End of tour</li>
+            </ul>
+          </div>
         </div>
         </div>
       </div>
@@ -157,4 +159,4 @@ const Gangtok2Package = () => {
   );
 };
 
-export default Gangtok2Package;
+export default GangtokZulukPackage;

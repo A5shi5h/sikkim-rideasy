@@ -108,13 +108,13 @@ const GangtokPackage = () => {
         <h2 className="text-2xl font-bold mt-8">Package Itinerary</h2>
         <div className="mt-4 p-4 border rounded-lg shadow">
           <div className="mb-4">
-            <h3 className="text-lg font-bold bg-red-500 text-white inline-block px-3 py-1 rounded">DAY 1</h3>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 1</h3>
             <p className="mt-2"><strong>Bagdogra/Pakyong/New Jalpaiguri Station/Siliguri to Gangtok</strong></p>
             <p className="text-md font-light">Overnight stay at Gangtok</p>
           </div>
           
           <div className="mb-4">
-            <h3 className="text-lg font-bold bg-red-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
             <p className="mt-2 font-bold">Full day Tsomgo Lake and New Baba Mandir Sightseeing</p>
             <ul className="list-disc pl-5 font-light">
               <li>Tsomgo Lake</li>
@@ -124,7 +124,7 @@ const GangtokPackage = () => {
             <p className="font-light">Overnight stay at Gangtok.</p>
           </div>
           <div>
-            <h3 className="text-lg font-bold bg-red-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
             <p className="mt-2 font-bold">Half Day Gangtok Sightseeing and drop</p>
             <ul className="list-disc pl-5 font-light">
               <li>Namgyal Institute of Tibetology</li>

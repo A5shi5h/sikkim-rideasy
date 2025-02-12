@@ -5,28 +5,22 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Gangtok2Package = () => {
+const LachenLachungPackage = () => {
 
-  const destination = "Gangtok";
+  const destination = "Lachung-Lachen";
 
   const cars = [
     {
-      type: "Hatchback",
-      price: 16000,
-      seats: "4 seater",
-      image: "./images/hatchback1.jpg", 
-    },
-    {
-      type: "Sedan",
-      price: 18000,
-      seats: "4 seater",
-      image: "./images/sedan1.jpg", 
-    },
-    {
-      type: "SUV",
-      price: 22000,
+      type: "SUV (Innova)",
+      price: 19500,
       seats: "6 seater",
       image: "./images/suv1.jpg", 
+    },
+    {
+      type: "MUV (Xylo)",
+      price: 18000,
+      seats: "6 seater",
+      image: "./images/muv1.jpg", 
     },
   ];
 
@@ -42,7 +36,7 @@ const Gangtok2Package = () => {
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
       {/* Header Section */}
       <h1 className="text-xl font-bold text-red-600">
-        GTK002 Gangtok | 3 Nights 4 Days
+        GTK007 Lachen-Lachung | 2 Nights 3 Days
       </h1>
 
       {/* Package Inclusions */}
@@ -86,7 +80,7 @@ const Gangtok2Package = () => {
       {/* Car Selection & Booking */}
       <div className="bg-white p-4 mt-6 shadow-md rounded-lg">
         <h2 className="font-bold text-lg">Car Availability:</h2>
-        <div className="grid md:grid-cols-3 gap-5 mt-4">
+        <div className="grid md:grid-cols-2 gap-5 mt-4">
         {cars.map((car, index) => (
             <div key={index} className="border rounded-lg overflow-hidden shadow-md p-4 text-center">
               <img src={car.image} alt={car.type} className="w-full h-40 object-contain mb-4" />
@@ -109,45 +103,26 @@ const Gangtok2Package = () => {
         <div className="mt-4 p-4 border rounded-lg shadow">
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 1</h3>
-            <p className="mt-2"><strong>Bagdogra/Pakyong/New Jalpaiguri Station/Siliguri to Gangtok</strong></p>
-            <p className="text-md font-light">Overnight stay at Gangtok</p>
+            <p className="mt-2"><strong>Gangtok to Lachung</strong></p>
+            <p className="text-md font-light">Overnight stay at Lachung</p>
           </div>
           
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
-            <p className="mt-2 font-bold">Full day Tsomgo Lake and New Baba Mandir Sightseeing</p>
+            <p className="mt-2 font-bold">Yumthang Valley and drop to Lachen</p>
             <ul className="list-disc pl-5 font-light">
-              <li>Tsomgo Lake</li>
-              <li>New Baba Mandir</li>
-              <li>Optional: Nathula Pass (extra charges apply)</li>
+              <li>Yumthang Valley</li>
             </ul>
-            <p className="font-light">Overnight stay at Gangtok.</p>
           </div>
 
           <div className="mb-4">
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
-            <p className="mt-2 font-bold">Half Day Gangtok Sightseeing and drop</p>
+            <p className="mt-2 font-bold">Lachen Sightseeing and back to Gangtok</p>
             <ul className="list-disc pl-5 font-light">
-              <li>Tashi View Point</li>
-              <li>Ganesh Tok</li>
-              <li>Hanuman Tok</li>
-              <li>Bakthang Water Falls</li>
-              <li>Banjhakri Falls</li>
-              <li>Ropeway</li>
-              <li>Do-Drul Chorten</li>
-              <li>Namgyal Institute of Tibetology</li>
-              <li>Flower Show (Orchid)</li>
-              <li>Directorate of Handicraft & Handloom</li>
+              <li>Gurudongmar Lake</li>
             </ul>
-            <p className="font-light">Overnight stay at Gangtok</p>
+            <p className="text-md font-light">End of tour</p>
           </div>
-
-          <div>
-            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 4</h3>
-            <p className="mt-2 font-bold">Gangtok to Bagdogra Airport/Pakyong Airport/New Jalpaiguri Railway Station/Siliguri</p>
-            <p className="font-light">End of tour</p>
-          </div>
-
         </div>
         </div>
       </div>
@@ -157,4 +132,4 @@ const Gangtok2Package = () => {
   );
 };
 
-export default Gangtok2Package;
+export default LachenLachungPackage;

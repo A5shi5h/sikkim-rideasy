@@ -53,6 +53,28 @@ const packages = [
   },
   {
     id: "GTK003",
+    destination: "Gangtok-Zuluk",
+    nights: 4,
+    days: 5,
+    image: "./images/zuluk1.jpeg", 
+    hatchback : {
+      name : "hatchback",
+      price : 17000,
+      image : "./images/hatchback1.jpg"
+   },
+   sedan: {
+     name : "sedan",
+     price : 19000,
+     image : "./images/sedan1.jpg",
+   },
+   suv: {
+     name : "suv",
+     price : 23000,
+     image : "./images/suv1.jpg"
+   },
+  },
+  {
+    id: "GTK004",
     destination: "Gangtok-Namchi",
     nights: 4,
     days: 5,
@@ -74,7 +96,7 @@ const packages = [
    },
   },
   {
-    id: "GTK004",
+    id: "GTK005",
     destination: "Gangtok-Namchi-Pelling",
     nights: 5,
     days: 6,
@@ -96,7 +118,7 @@ const packages = [
    },
   },
   {
-    id: "GTK005",
+    id: "GTK006",
     destination: "Lachung",
     nights: 1,
     days: 2,
@@ -113,7 +135,7 @@ const packages = [
     },
   },
   {
-    id: "GTK006",
+    id: "GTK007",
     destination: "Lachen-Lachung",
     nights: 2,
     days: 3,
@@ -130,8 +152,8 @@ const packages = [
     },
   },
   {
-    id: "GTK007",
-    destination: "Super North",
+    id: "GTK008",
+    destination: "Super-North",
     nights: 4,
     days: 5,
     image: "./images/north sikkim.jpg", 
@@ -147,8 +169,8 @@ const packages = [
     },
   },
   {
-    id: "GTK008",
-    destination: "Combo North",
+    id: "GTK009",
+    destination: "Combo-North",
     nights: 6,
     days: 7,
     image: "./images/north sikkim2.jpg", 
