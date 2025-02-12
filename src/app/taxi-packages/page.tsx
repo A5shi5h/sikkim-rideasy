@@ -224,7 +224,7 @@ const TaxiPackages = () => {
                 )}
                 {pkg.suv && (
                   <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">SUV (4 Seater)</span>
+                    <span className="text-gray-600">SUV (6 Seater)</span>
                     <span className="text-red-600 font-bold text-center flex-1">
                       ₹{pkg.suv.price}
                     </span>
