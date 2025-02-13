@@ -40,6 +40,7 @@ const GangtokZulukPackage = () => {
   return (
     <>
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
+     <img src="./images/zuluk.jpeg" className="h-64 w-full object-cover rounded-lg mb-4"/>
       {/* Header Section */}
       <h1 className="text-xl font-bold text-red-600">
         GTK003 Gangtok-Zuluk | 3 Nights 4 Days
@@ -112,24 +113,9 @@ const GangtokZulukPackage = () => {
             <p className="mt-2"><strong>Bagdogra/Pakyong/New Jalpaiguri Station/Siliguri to Gangtok</strong></p>
             <p className="text-md font-light">Overnight stay at Gangtok</p>
           </div>
-          
-          <div className="mb-4">
-            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
-            <p className="mt-2 font-bold">Full day Tsomgo Lake and Zuluk</p>
-            <ul className="list-disc pl-5 font-light">
-              <li>Tsomgo Lake</li>
-              <li>New Baba Mandir</li>
-              <li>Thambi View Point</li>
-              <li>Nathang Valley</li>
-              <li>Zig Zag Road</li>
-              <li>Old Baba Mandir</li>
-              <li>Optional: Nathula Pass (extra charges apply)</li>
-            </ul>
-            <p className="font-light">Overnight stay at Gangtok.</p>
-          </div>
 
           <div className="mb-4">
-            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 2</h3>
             <p className="mt-2 font-bold">Full Day Gangtok Sightseeing</p>
             <ul className="list-disc pl-5 font-light">
               <li>Tashi View Point</li>
@@ -145,10 +131,32 @@ const GangtokZulukPackage = () => {
             </ul>
             <p className="font-light">Overnight stay at Gangtok</p>
           </div>
+          
+          <div className="mb-4">
+            <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 3</h3>
+            <p className="mt-2 font-bold">Full day Tsomgo Lake and Zuluk</p>
+            <ul className="list-disc pl-5 font-light">
+              <li>Tsomgo Lake</li>
+              <li>New Baba Mandir</li>
+              <li>Thambi View Point</li>
+              <li>Nathang Valley</li>
+              <li>Zig Zag Road</li>
+              <li>Tukla Valley</li>
+              <li>Zig Zag Road</li>
+              <li>Lungthung</li>
+              <li>Kupup Lake</li>
+              <li>Memencho Lake</li>
+              <li>Adi Baba Mandir</li>
+              <li>Jelepla Pass Viewpoint</li>
+              <li>Old Baba Mandir</li>
+              <li>Optional: Nathula Pass (extra charges apply)</li>
+            </ul>
+            <p className="font-light">Overnight stay at Zuluk.</p>
+          </div>
 
           <div>
             <h3 className="text-lg font-bold bg-yellow-500 text-white inline-block px-3 py-1 rounded">DAY 4</h3>
-            <p className="mt-2 font-bold">NJP , Bagdogra , Darjeeling drop</p>
+            <p className="mt-2 font-bold">Half day Zuluk Sightseeing and NJP / Bagdogra / Darjeeling drop</p>
             <ul className="list-disc pl-5 font-light">
               <li>End of tour</li>
             </ul>

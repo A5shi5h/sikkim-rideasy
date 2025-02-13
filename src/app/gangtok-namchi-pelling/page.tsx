@@ -40,6 +40,7 @@ const GangtokNamchiPellingPackage = () => {
   return (
     <>
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
+     <img src="./images/namchi2.jpg" className="h-64 w-full object-cover rounded-lg mb-4"/>
       {/* Header Section */}
       <h1 className="text-xl font-bold text-red-600">
         GTK005 Gangtok-Namchi-Pelling | 5 Nights 6 Days
