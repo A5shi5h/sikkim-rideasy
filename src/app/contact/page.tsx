@@ -2,7 +2,6 @@
 import React from "react";
 import { Vortex } from "@/components/ui/vortex";
 import Footer from "@/components/Footer";
-import Instructors from "@/components/TagLine";
 import TagLine from "@/components/TagLine";
 
 const page = () => {

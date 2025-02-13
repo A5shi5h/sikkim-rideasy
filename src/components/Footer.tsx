@@ -74,7 +74,7 @@ function Footer() {
           <h2 className="text-white text-lg font-semibold mb-4">Contact Us</h2>
           <p>Sikkim, India</p>
           <p>Tadong Gangtok , 737101</p>
-          <p>Email: rideasy@gmail.com</p>
+          <p>Email: sikkimrideasy@gmail.com</p>
           <p>Phone: +91 8918655889 OR</p>
           <p>+91 7478913770</p>
         </div>

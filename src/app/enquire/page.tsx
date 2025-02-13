@@ -3,7 +3,6 @@
 import React, { FormEvent, useState } from 'react';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import Footer from '@/components/Footer';
-import Instructors from '@/components/TagLine';
 import TagLine from '@/components/TagLine';
 
 function EnquireUs() {
