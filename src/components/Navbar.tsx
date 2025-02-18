@@ -11,7 +11,8 @@ function Navbar({ className }: { className?: string }) {
     <nav className={cn("fixed top-0 inset-x-0 lg:inset-x-20 z-50 p-2 bg-black shadow-md text-white rounded-md", className)}>
       <div className="container mx-auto px-4 lg:py-3 py-10 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="flex items-center justify-center gap-2 text-xl font-bold ">
+          <img src="./images/logo1.jpg" className="h-12 w-12"/>
           Sikkim RidEasy
         </Link>
 
