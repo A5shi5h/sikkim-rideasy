@@ -1,12 +1,12 @@
 "use client";
 
-const Footer = lazy(() => import("@/components/Footer"));
-const TagLine = lazy(() => import("@/components/TagLine"));
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { lazy, Suspense } from "react";
 
 const LazyImage = lazy(() => import("@/components/LazyImage")); // Lazy load image component
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
 
 const packages = [
   {
