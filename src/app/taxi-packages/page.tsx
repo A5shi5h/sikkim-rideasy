@@ -4,7 +4,9 @@ import Footer from "@/components/Footer";
 import TagLine from "@/components/TagLine";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { lazy, Suspense } from "react";
+
+const LazyImage = lazy(() => import("@/components/LazyImage")); // Lazy load image component
 
 const packages = [
   {
@@ -188,106 +190,81 @@ const packages = [
 ];
 
 const TaxiPackages = () => {
-  
   const router = useRouter();
 
-  const handleBookNow = (destination : any, price : any , carType : any , image : any) => {
-    router.push(`/packagesBooking?destination=${destination}&price=${price}&vehicle=${carType}&image=${image}`);
+  const handleBookNow = (destination:any, price:any, carType:any, image:any) => {
+    router.push(
+      `/packagesBooking?destination=${destination}&price=${price}&vehicle=${carType}&image=${image}`
+    );
   };
 
   return (
     <>
-     <div className="p-6 bg-gray-100 min-h-screen pt-28">
-      {packages.map((pkg) => (
-        <div key={pkg.id} className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-xl font-bold text-blue-600">
-            {pkg.id} {pkg.destination} | {pkg.nights} Nights {pkg.days} Days
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-4">
-            <img
-              src={pkg.image}
-              alt={pkg.destination}
-              className="w-full h-56 object-cover rounded-lg"
-            />
-            <div>
-              <p className="text-gray-700 font-semibold">
-                {pkg.destination} ({pkg.nights}N{pkg.days}D)
-              </p>
-              <div className="mt-3 space-y-2">
-                {pkg.hatchback && (
-                  <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600 text-sm">Hatchback (4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">
-                      ₹{pkg.hatchback.price}
-                    </span>
-                    <button
-                      onClick={() =>
-                        handleBookNow(pkg.destination, pkg.hatchback.price , pkg.hatchback.name , pkg.hatchback.image)
-                      }
-                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
-                    >
-                      Book Now
+      <div className="p-6 bg-gray-100 min-h-screen pt-28">
+        {packages.map((pkg) => (
+          <div key={pkg.id} className="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 className="text-xl font-bold text-blue-600">
+              {pkg.id} {pkg.destination} | {pkg.nights} Nights {pkg.days} Days
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-6 mt-4">
+              <Suspense fallback={<div>Loading...</div>}>
+                <LazyImage src={pkg.image} alt={pkg.destination} />
+              </Suspense>
+
+              <div>
+                <p className="text-gray-700 font-semibold">
+                  {pkg.destination} ({pkg.nights}N{pkg.days}D)
+                </p>
+                <div className="mt-3 space-y-2">
+                {["hatchback", "sedan", "suv", "muv"].map((type) => (
+                      pkg[type] ? (   // ✅ Check if the property exists
+                        <div
+                          key={type}
+                          className="flex justify-between items-center border p-2 rounded-md"
+                        >
+                          <span className="text-gray-600 text-sm">
+                            {pkg[type]?.name.toUpperCase()} (4-7 Seater)
+                          </span>
+                          <span className="text-red-600 font-bold text-center flex-1">
+                            ₹{pkg[type]?.price}
+                          </span>
+                          <button
+                            onClick={() =>
+                              handleBookNow(
+                                pkg.destination,
+                                pkg[type]?.price,
+                                pkg[type]?.name,
+                                pkg[type]?.image
+                              )
+                            }
+                            className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
+                          >
+                            Book Now
+                          </button>
+                        </div>
+                      ) : null  // ✅ Render nothing if the type doesn't exist
+                    ))}
+                </div>
+                <div className="flex space-x-2 mt-4">
+                  <Link href={pkg.destination.toLowerCase()}>
+                    <button className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm">
+                      View Details
                     </button>
-                  </div>
-                )}
-                {pkg.sedan && (
-                  <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">Sedan (4 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">
-                      ₹{pkg.sedan.price}
-                    </span>
-                    <button
-                      onClick={() => handleBookNow(pkg.destination, pkg.sedan.price , pkg.sedan.name , pkg.sedan.image)}
-                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
-                    >
-                      Book Now
+                  </Link>
+                  <Link href={"enquire"}>
+                    <button className="bg-yellow-500 text-white px-4 py-2 rounded-md text-sm">
+                      Send Enquiry
                     </button>
-                  </div>
-                )}
-                {pkg.suv && (
-                  <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">SUV (6 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">
-                      ₹{pkg.suv.price}
-                    </span>
-                    <button
-                      onClick={() => handleBookNow(pkg.destination, pkg.suv.price , pkg.suv.name , pkg.suv.image)}
-                     className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
-                    >
-                      Book Now
-                    </button>
-                  </div>
-                )}
-                {pkg.muv && (
-                  <div className="flex justify-between items-center border p-2 rounded-md">
-                    <span className="text-gray-600">MUV (6-7 Seater)</span>
-                    <span className="text-red-600 font-bold text-center flex-1">
-                      ₹{pkg.muv.price}
-                    </span>
-                    <button
-                      onClick={() => handleBookNow(pkg.destination, pkg.muv.price , pkg.muv.name , pkg.muv.image)}
-                      className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
-                    >
-                      Book Now
-                    </button>
-                  </div>
-                )}
-              </div>
-              <div className="flex space-x-2 mt-4">
-                <Link href={pkg.destination.toLowerCase()}><button className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm">
-                  View Details
-                </button></Link>
-                <Link href={"enquire"}><button className="bg-yellow-500 text-white px-4 py-2 rounded-md text-sm">
-                  Send Enquiry
-                </button></Link>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-    <TagLine/>
-    <Footer/>
+        ))}
+      </div>
+      <TagLine />
+      <Footer />
     </>
   );
 };
