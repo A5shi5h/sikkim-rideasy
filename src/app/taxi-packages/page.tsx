@@ -1,7 +1,7 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import TagLine from "@/components/TagLine";
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { lazy, Suspense } from "react";
