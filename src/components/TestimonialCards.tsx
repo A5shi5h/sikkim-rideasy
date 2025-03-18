@@ -1,54 +1,62 @@
 'use client'
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
-const musicSchoolTestimonials = [
-    {
-      quote:
-        'Joining the music school transformed my understanding of music and helped me to truly discover my own sound. The instructors are world-class!',
-      name: 'Alex Johnson',
-      title: 'Guitar Student',
-    },
-    {
-      quote:
-        "The community and support at this school are unmatched. I've grown not just as a pianist, but also as a performer, thanks to their comprehensive approach.",
-      name: 'Samantha Lee',
-      title: 'Piano Student',
-    },
-    {
-      quote:
-        "This school offered me the tools and confidence to take my singing to the next level. I'm endlessly grateful for the personalized coaching.",
-      name: 'Michael Chen',
-      title: 'Vocal Student',
-    },
-    {
-      quote:
-        'As a violinist, finding the right mentor can be challenging, but this school matched me with a teacher who truly understands my goals and challenges.',
-      name: 'Emily Taylor',
-      title: 'Violin Student',
-    },
-    {
-      quote:
-        'The production courses here opened my eyes to the intricacies of music production. Highly recommend for any aspiring producers!',
-      name: 'Chris Morales',
-      title: 'Music Production Student',
-    },
-  ];
+const serviceTestimonials = [
+  {
+    testimony:
+      "Sikkim Rideasy made our trip stress-free and comfortable. The driver was courteous and the vehicle was in excellent condition. Highly recommend their services!",
+    name: "Priya Sharma",
+    title: "Tourist from Delhi",
+  },
+  {
+    testimony:
+      "I regularly use Sikkim Rideasy for airport pickups and local travel. Their punctuality and professionalism are commendable. A reliable cab service in Sikkim!",
+    name: "Rohit Gupta",
+    title: "Business Traveler",
+  },
+  {
+    testimony:
+      "We booked Sikkim Rideasy for a family sightseeing tour. The driver was knowledgeable about the local attractions and made our experience memorable.",
+    name: "Anjali Mehta",
+    title: "Family Traveler",
+  },
+  {
+    testimony:
+      "The best part of Sikkim Rideasy is their transparent pricing and courteous drivers. No hidden charges, just smooth rides. Will definitely book again!",
+    name: "Vikas Jain",
+    title: "Frequent Traveler",
+  },
+  {
+    testimony:
+      "Hired Sikkim Rideasy for an office team outing. The cab was clean, spacious, and arrived on time. Excellent service with friendly staff!",
+    name: "Neha Verma",
+    title: "Corporate Client",
+  },
+  {
+    testimony:
+      "As a solo traveler, safety is my priority. Sikkim Rideasy provided me with a safe and comfortable ride. The driver was friendly and helpful.",
+    name: "Pooja R.",
+    title: "Solo Traveler",
+  },
+];
 
-function MusicSchoolTestimonials() {
+function ServiceTestimonials() {
   return (
     <div className="h-[40rem] w-full dark:bg-black dark:bg-grid-white/[0.2] relative flex flex-col items-center justify-center overflow-hidden">
-        <h2 className="text-3xl font-bold text-center mb-8 z-10 text-white">Hear our Harmony: Voices of success</h2>
-        <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8">
-            <div className="w-full max-w-6xl">
-            <InfiniteMovingCards
-                items={musicSchoolTestimonials}
-                direction="right"
-                speed="slow"
-      />
-            </div>
+      <h2 className="text-3xl font-bold text-center mb-8 z-10 text-white">
+        Hear From Our Happy Riders
+      </h2>
+      <div className="flex justify-center w-full overflow-hidden px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-6xl">
+          <InfiniteMovingCards
+            items={serviceTestimonials}
+            direction="right"
+            speed="slow"
+          />
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default MusicSchoolTestimonials
+export default ServiceTestimonials;
