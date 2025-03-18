@@ -1,9 +1,10 @@
 // gallery.js (Next.js page for Sikkim Rideasy)
 
-import Footer from '@/components/Footer';
-import Instructors from '@/components/TagLine';
-import TagLine from '@/components/TagLine';
+import React, { lazy, Suspense } from "react";
 import Image from 'next/image';
+
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
 
 export default function Gallery() {
     const galleryItems = [
