@@ -42,8 +42,13 @@ const Page = () => {
         <AnimatedTestimonials testimonials={owner} />
       </Suspense>
 
-      <TagLine />
-      <Footer />
+      <Suspense fallback={<div>Loading TagLine...</div>}>
+        <TagLine />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 };

@@ -263,8 +263,14 @@ const TaxiPackages = () => {
           </div>
         ))}
       </div>
-      <TagLine />
-      <Footer />
+      
+      <Suspense fallback={<div>Loading TagLine...</div>}>
+        <TagLine />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 };
