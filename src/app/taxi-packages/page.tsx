@@ -218,24 +218,24 @@ const TaxiPackages = () => {
                 </p>
                 <div className="mt-3 space-y-2">
                 {["hatchback", "sedan", "suv", "muv"].map((type) => (
-                      pkg[type] ? (   // ✅ Check if the property exists
+                      (pkg as any)[type] ? (   // ✅ Check if the property exists
                         <div
                           key={type}
                           className="flex justify-between items-center border p-2 rounded-md"
                         >
                           <span className="text-gray-600 text-sm">
-                            {pkg[type]?.name.toUpperCase()} (4-7 Seater)
+                            {(pkg as any)[type]?.name.toUpperCase()} (4-7 Seater)
                           </span>
                           <span className="text-red-600 font-bold text-center flex-1">
-                            ₹{pkg[type]?.price}
+                            ₹{(pkg as any)[type]?.price}
                           </span>
                           <button
                             onClick={() =>
                               handleBookNow(
                                 pkg.destination,
-                                pkg[type]?.price,
-                                pkg[type]?.name,
-                                pkg[type]?.image
+                                (pkg as any)[type]?.price,
+                                (pkg as any)[type]?.name,
+                                (pkg as any)[type]?.image
                               )
                             }
                             className="bg-orange-500 text-white px-3 md:px-4 py-1 md:py-2 rounded-md hover:bg-orange-600 text-sm md:text-base"
