@@ -9,6 +9,7 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
+import "./CardStyles.css";  // ✅ Import external CSS file
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
@@ -48,26 +49,14 @@ export const CardContainer = ({
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "py-20 flex items-center justify-center",
-          containerClassName
-        )}
-        style={{
-          perspective: "1000px",
-        }}
+        className={cn("card-container py-20 flex items-center justify-center", containerClassName)}  // ✅ Use external CSS class
       >
         <div
           ref={containerRef}
           onMouseEnter={handleMouseEnter}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
-            className
-          )}
-          style={{
-            transformStyle: "preserve-3d",
-          }}
+          className={cn("card-inner flex items-center justify-center relative", className)}  // ✅ Use external CSS class
         >
           {children}
         </div>
@@ -85,10 +74,7 @@ export const CardBody = ({
 }) => {
   return (
     <div
-      className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
-        className
-      )}
+      className={cn("card-body h-96 w-96", className)}  // ✅ Use external CSS class
     >
       {children}
     </div>
@@ -120,7 +106,6 @@ export const CardItem = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
-  // ✅ Memoize the function using useCallback
   const handleAnimations = useCallback(() => {
     if (!ref.current) return;
     if (isMouseEntered) {
@@ -128,7 +113,7 @@ export const CardItem = ({
     } else {
       ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
     }
-  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]); 
+  }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
   useEffect(() => {
     handleAnimations();
@@ -137,7 +122,7 @@ export const CardItem = ({
   return (
     <Tag
       ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
+      className={cn("card-animate w-fit", className)}  // ✅ Use external CSS class
       {...rest}
     >
       {children}

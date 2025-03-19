@@ -1,0 +1,36 @@
+/* Container Styles */
+.card-container {
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-linear;
+  }
+  
+  /* Card Hover Effects */
+  .card-inner:hover {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  
+  /* Card Body */
+  .card-body {
+    transform-style: preserve-3d;
+  }
+  
+  /* Animation Styles */
+  .card-animate {
+    transition: transform 0.2s ease-linear;
+  }
+  
+  /* Mouse Move Effect */
+  .mouse-move {
+    transition: transform 0.2s ease-linear;
+  }
+  
+  /* Mouse Enter Animation */
+  .mouse-enter {
+    transition: transform 0.2s ease-linear;
+  }
+  
+  
