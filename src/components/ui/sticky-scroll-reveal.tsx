@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
@@ -84,7 +85,11 @@ export const StickyScroll = ({
         }}
         className="hidden lg:block h-52 w-80 rounded-sm sticky top-1/4 overflow-hidden"
       >
-        <img src="./images/logo.jpeg"/>
+        <Image 
+        src="/images/logo.jpeg"
+        alt="logo"
+        height={500}
+        width={500}/>
       </motion.div>
     </motion.div>
   );
