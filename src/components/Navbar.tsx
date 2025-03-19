@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
+import Image from "next/image";
 
 function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,12 +13,17 @@ function Navbar({ className }: { className?: string }) {
       <div className="container mx-auto px-4 lg:py-3 py-10 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 text-xl font-bold ">
-          <img src="./images/logo1.jpg" className="h-12 w-12"/>
+          <Image 
+          src="/images/logo1.jpg"
+          alt="logo image"
+          width={100}
+          height={100}
+          className="h-12 w-12"/>
           Sikkim RidEasy
         </Link>
 
         {/* Hamburger Button */}
-        <button
+        <button title="hamburger button"
           className="lg:hidden block text-gray-700 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
