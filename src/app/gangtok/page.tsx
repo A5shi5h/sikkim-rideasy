@@ -4,6 +4,7 @@ import TagLine from "@/components/TagLine";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const GangtokPackage = () => {
 
@@ -14,19 +15,19 @@ const GangtokPackage = () => {
       type: "Hatchback",
       price: 13000,
       seats: "4 seater",
-      image: "./images/hatchback1.jpg", 
+      image: "/images/hatchback1.jpg", 
     },
     {
       type: "Sedan",
       price: 14500,
       seats: "4 seater",
-      image: "./images/sedan1.jpg", 
+      image: "/images/sedan1.jpg", 
     },
     {
       type: "SUV",
       price: 16000,
       seats: "6 seater",
-      image: "./images/suv1.jpg", 
+      image: "/images/suv1.jpg", 
     },
   ];
 
@@ -40,7 +41,12 @@ const GangtokPackage = () => {
   return (
     <>
      <div className="p-6 bg-gray-100 min-h-screen pt-32">
-      <img src="./images/gangtok.jpg" className="h-64 w-full object-cover rounded-lg mb-4"/>
+      <Image 
+      src="/images/gangtok.jpg"
+      alt="gangtok"
+      height={400}
+      width={400} 
+      className="h-64 w-full object-cover rounded-lg mb-4"/>
       {/* Header Section */}
       <h1 className="text-xl font-bold text-red-600">
         GTK001 Gangtok | 2 Nights 3 Days
@@ -52,7 +58,12 @@ const GangtokPackage = () => {
         <div className="grid grid-cols-3 gap-4 mt-4">
           {['Vehicle', 'Sightseeing', 'Transfer'].map((item, index) => (
             <div key={index} className="flex flex-col items-center">
-              <img src={`./icons/${item.toLowerCase()}.png`} alt={item} className="w-12 h-12" />
+              <Image 
+              src={`/icons/${item.toLowerCase()}.png`} 
+              alt={item} 
+              height={100}
+              width={100}
+              className="w-12 h-12" />
               <span className="text-sm font-semibold text-gray-700">{item}</span>
             </div>
           ))}
@@ -90,15 +101,20 @@ const GangtokPackage = () => {
         <div className="grid md:grid-cols-3 gap-5 mt-4">
         {cars.map((car, index) => (
             <div key={index} className="border rounded-lg overflow-hidden shadow-md p-4 text-center">
-              <img src={car.image} alt={car.type} className="w-full h-40 object-contain mb-4" />
+              <Image 
+              src={car.image} 
+              alt={car.type}
+              height={100}
+              width={100} 
+              className="w-full h-40 object-contain mb-4" />
               <h4 className="font-semibold text-lg">{car.type}</h4>
               <p className="text-gray-600">{car.seats}</p>
               <p className="text-lg font-bold text-blue-600">₹{car.price}</p>
               <div className="flex justify-center mt-4 gap-2">
-                <button onClick={() => handleBookNow(destination , car.type , car.price , car.image)}
+                <button type="button" onClick={() => handleBookNow(destination , car.type , car.price , car.image)}
                   className="bg-yellow-500 hover:bg-yellow-600 p-4 text-sm rounded-lg">Book Now</button>
                 <Link href={"enquire"}>
-                    <button className="bg-red-500 hover:bg-red-600 p-4 text-sm rounded-lg text-white">Send Enquiry</button>
+                    <button type="button" className="bg-red-500 hover:bg-red-600 p-4 text-sm rounded-lg text-white">Send Enquiry</button>
                 </Link>
               </div>
             </div>

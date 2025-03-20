@@ -2,6 +2,7 @@
 
 import Footer from '@/components/Footer';
 import TagLine from '@/components/TagLine';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 const CarsPage = () => {
@@ -40,10 +41,12 @@ const CarsPage = () => {
               {/* Left Column - Car Image */}
               <div className="flex flex-col items-center justify-center">
                 <h2 className="text-xl font-bold text-black mb-4">{car.name}</h2>
-                <img
+                <Image
                   src={car.image}
                   alt={car.name}
-                  className="w-full h-60 object-cover rounded-lg"
+                  height={400}
+                  width={400}
+                  className="object-cover rounded-lg"
                 />
               </div>
 

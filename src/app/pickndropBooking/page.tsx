@@ -67,13 +67,15 @@ const PichNDropBooking = () => {
 
   return (
     <section className="bg-gray-100 min-h-screen pt-36 p-8 md:p-[10rem]">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col">
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Review and Confirm Your Booking
         </h1>
         <Image
           src={image || "/images/default.jpg"}
           alt={car || "Selected Car"}
+          height={500}
+          width={500}
           className="mb-6 rounded-lg"
         />
         <p className="text-xl mb-6 text-center">

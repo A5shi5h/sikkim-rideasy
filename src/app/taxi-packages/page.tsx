@@ -18,17 +18,17 @@ const packages = [
     hatchback : {
        name : "hatchback",
        price : 13000,
-       image : "./images/hatchback1.jpg"
+       image : "/images/hatchback1.jpg"
     },
     sedan: {
       name : "sedan",
       price : 14500,
-      image : "./images/sedan1.jpg",
+      image : "/images/sedan1.jpg",
     },
     suv: {
       name : "suv",
       price : 16000,
-      image : "./images/suv1.jpg"
+      image : "/images/suv1.jpg"
     },
   },
   {
@@ -40,17 +40,17 @@ const packages = [
     hatchback : {
       name : "hatchback",
       price : 16000,
-      image : "./images/hatchback1.jpg"
+      image : "/images/hatchback1.jpg"
    },
    sedan: {
      name : "sedan",
      price : 18000,
-     image : "./images/sedan1.jpg",
+     image : "/images/sedan1.jpg",
    },
    suv: {
      name : "suv",
      price : 22000,
-     image : "./images/suv1.jpg"
+     image : "/images/suv1.jpg"
    },
   },
   {
@@ -62,17 +62,17 @@ const packages = [
     hatchback : {
       name : "hatchback",
       price : 17000,
-      image : "./images/hatchback1.jpg"
+      image : "/images/hatchback1.jpg"
    },
    sedan: {
      name : "sedan",
      price : 19000,
-     image : "./images/sedan1.jpg",
+     image : "/images/sedan1.jpg",
    },
    suv: {
      name : "suv",
      price : 23000,
-     image : "./images/suv1.jpg"
+     image : "/images/suv1.jpg"
    },
   },
   {
@@ -84,17 +84,17 @@ const packages = [
     hatchback : {
       name : "hatchback",
       price : 20000,
-      image : "./images/hatchback1.jpg"
+      image : "/images/hatchback1.jpg"
    },
    sedan: {
      name : "sedan",
      price : 22500,
-     image : "./images/sedan1.jpg",
+     image : "/images/sedan1.jpg",
    },
    suv: {
      name : "suv",
      price : 27500,
-     image : "./images/suv1.jpg"
+     image : "/images/suv1.jpg"
    },
   },
   {
@@ -106,17 +106,17 @@ const packages = [
     hatchback : {
       name : "hatchback",
       price : 24000,
-      image : "./images/hatchback1.jpg"
+      image : "/images/hatchback1.jpg"
    },
    sedan: {
     name : "sedan",
      price : 27000,
-     image : "./images/sedan1.jpg",
+     image : "/images/sedan1.jpg",
    },
    suv: {
     name : "suv",
      price : 33000,
-     image : "./images/suv1.jpg"
+     image : "/images/suv1.jpg"
    },
   },
   {
@@ -128,12 +128,12 @@ const packages = [
     suv: {
       name : "suv",
       price : 13000,
-      image : "./images/suv1.jpg"
+      image : "/images/suv1.jpg"
     },
     muv: {
       name : "muv",
       price : 12000,
-      image : "./images/muv1.jpg"
+      image : "/images/muv1.jpg"
     },
   },
   {
@@ -145,12 +145,12 @@ const packages = [
     suv: {
       name : "suv",
       price : 19500,
-      image : "./images/suv1.jpg"
+      image : "/images/suv1.jpg"
     },
     muv: {
       name : "muv",
       price : 18000,
-      image : "./images/muv1.jpg"
+      image : "/images/muv1.jpg"
     },
   },
   {
@@ -162,12 +162,12 @@ const packages = [
     suv: {
       name : "suv",
       price : 30500,
-      image : "./images/suv1.jpg"
+      image : "/images/suv1.jpg"
     },
     muv: {
       name : "muv",
       price : 28000,
-      image : "./images/muv1.jpg"
+      image : "/images/muv1.jpg"
     },
   },
   {
@@ -179,12 +179,12 @@ const packages = [
     suv: {
       name : "suv",
       price : 41500,
-      image : "./images/suv1.jpg"
+      image : "/images/suv1.jpg"
     },
     muv: {
       name : "muv",
       price : 40000,
-      image : "./images/muv1.jpg"
+      image : "/images/muv1.jpg"
     },
   },
 ];
