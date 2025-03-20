@@ -70,6 +70,7 @@ const ImageComponent = ({ card }: { card: Card }) => {
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200"
       )}
       alt="thumbnail"
+      loading="lazy"
     />
   );
 };

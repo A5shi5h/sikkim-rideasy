@@ -74,6 +74,7 @@ export default function Gallery() {
                                 width={300}
                                 height={200}
                                 className="w-full h-48 object-cover"
+                                loading="lazy"
                             />
                         </div>
                     ))}
