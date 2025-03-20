@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -68,7 +69,7 @@ const PackageBooking = () => {
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Review and Confirm Your Booking
         </h1>
-        <img
+        <Image
           src={image || "/images/default.jpg"}
           alt={carType || "Selected Car"}
           className="mb-6 rounded-lg"
@@ -155,7 +156,7 @@ const PackageBooking = () => {
               </div>
             </div>
 
-            <input type="checkbox" required className="mr-2 mt-6" />
+            <input title="checkbox for packages booking" type="checkbox" required className="mr-2 mt-6" />
             <label>
               I agree to the{" "}
               <Link href={"/terms-and-conditions"}>
