@@ -10,7 +10,7 @@ function Navbar({ className }: { className?: string }) {
 
   return (
     <nav className={cn("fixed top-0 inset-x-0 lg:inset-x-20 z-50 p-2 bg-black shadow-md text-white rounded-md", className)}>
-      <div className="container mx-auto px-4 lg:py-3 py-10 flex justify-between items-center">
+      <div className="container mx-auto px-4 lg:py-3 py-2 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 text-xl font-bold ">
           <Image 
@@ -86,7 +86,7 @@ function Navbar({ className }: { className?: string }) {
             </li>
             <li>
               <Link
-                href="/packages"
+                href="/taxi-packages"
                 className="block px-4 py-2 text-white hover:bg-gray-100 rounded-md"
               >
                 Taxi Packages
