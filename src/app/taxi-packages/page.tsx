@@ -248,12 +248,12 @@ const TaxiPackages = () => {
                 </div>
                 <div className="flex space-x-2 mt-4">
                   <Link href={pkg.destination.toLowerCase()}>
-                    <button className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm">
+                    <button title="button" className="bg-gray-800 text-white px-4 py-2 rounded-md text-sm">
                       View Details
                     </button>
                   </Link>
                   <Link href={"enquire"}>
-                    <button className="bg-yellow-500 text-white px-4 py-2 rounded-md text-sm">
+                    <button title="button" className="bg-yellow-500 text-white px-4 py-2 rounded-md text-sm">
                       Send Enquiry
                     </button>
                   </Link>
