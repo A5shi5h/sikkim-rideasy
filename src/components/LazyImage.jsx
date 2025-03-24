@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 const LazyImage = ({ src, alt }) => {
@@ -10,9 +11,11 @@ const LazyImage = ({ src, alt }) => {
           Loading...
         </div>
       )}
-      <img
+      <Image
         src={src}
         alt={alt}
+        height={500}
+        width={500}
         onLoad={() => setLoaded(true)}
         className={`w-full h-56 object-cover rounded-lg transition-opacity ${
           loaded ? "opacity-100" : "opacity-0"

@@ -1,9 +1,6 @@
 "use client"; 
 import Image from "next/image";
 import { Tabs } from "./ui/tabs";
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import PickNDrop from "./PickNDrop";
 import SightSeeing from "./SightSeeing";
 
@@ -34,7 +31,14 @@ export function TabsDemo() {
   return (
     <div className="h-[26rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full items-start justify-start my-40">
       <Tabs tabs={tabs}/>
-      <img className="h-full w-1/2 absolute right-0 top-[2rem] p-5 max-sm:hidden" src="./images/map.jpg"/>
+      <Image 
+      src="/images/map.jpg"
+      alt="image"
+      height={400}
+      width={400}
+      className="h-full w-1/2 absolute right-0 top-[2rem] p-5 max-sm:hidden"
+      loading="lazy" 
+      />
     </div>
   );
 }

@@ -14,7 +14,7 @@ const packages = [
     destination: "Gangtok",
     nights: 2,
     days: 3,
-    image: "./images/gangtok.jpg", 
+    image: "/images/gangtok.jpg", 
     hatchback : {
        name : "hatchback",
        price : 13000,
@@ -36,7 +36,7 @@ const packages = [
     destination: "Gangtok2",
     nights: 3,
     days: 4,
-    image: "./images/gangtok2.jpg", 
+    image: "/images/gangtok2.jpg", 
     hatchback : {
       name : "hatchback",
       price : 16000,
@@ -58,7 +58,7 @@ const packages = [
     destination: "Gangtok-Zuluk",
     nights: 4,
     days: 5,
-    image: "./images/zuluk1.jpeg", 
+    image: "/images/zuluk1.jpeg", 
     hatchback : {
       name : "hatchback",
       price : 17000,
@@ -80,7 +80,7 @@ const packages = [
     destination: "Gangtok-Namchi",
     nights: 4,
     days: 5,
-    image: "./images/namchi2.jpg", 
+    image: "/images/namchi2.jpg", 
     hatchback : {
       name : "hatchback",
       price : 20000,
@@ -102,7 +102,7 @@ const packages = [
     destination: "Gangtok-Namchi-Pelling",
     nights: 5,
     days: 6,
-    image: "./images/pelling2.jpg",
+    image: "/images/pelling2.jpg",
     hatchback : {
       name : "hatchback",
       price : 24000,
@@ -124,7 +124,7 @@ const packages = [
     destination: "Lachung",
     nights: 1,
     days: 2,
-    image: "./images/lachung.jpg", 
+    image: "/images/lachung.jpg", 
     suv: {
       name : "suv",
       price : 13000,
@@ -141,7 +141,7 @@ const packages = [
     destination: "Lachen-Lachung",
     nights: 2,
     days: 3,
-    image: "./images/lachen.jpg", 
+    image: "/images/lachen.jpg", 
     suv: {
       name : "suv",
       price : 19500,
@@ -158,7 +158,7 @@ const packages = [
     destination: "Super-North",
     nights: 4,
     days: 5,
-    image: "./images/north sikkim.jpg", 
+    image: "/images/north sikkim.jpg", 
     suv: {
       name : "suv",
       price : 30500,
@@ -175,7 +175,7 @@ const packages = [
     destination: "Combo-North",
     nights: 6,
     days: 7,
-    image: "./images/north sikkim2.jpg", 
+    image: "/images/north sikkim2.jpg", 
     suv: {
       name : "suv",
       price : 41500,
