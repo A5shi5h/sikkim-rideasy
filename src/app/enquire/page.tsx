@@ -2,8 +2,10 @@
 
 import React, { FormEvent, useState } from 'react';
 import { BackgroundBeams } from '@/components/ui/background-beams';
-import Footer from '@/components/Footer';
-import TagLine from '@/components/TagLine';
+import { lazy, Suspense } from "react";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
 
 function EnquireUs() {
   const [email, setEmail] = useState('');
@@ -92,8 +94,14 @@ function EnquireUs() {
           </form>
         </div>
       </div>
-      <TagLine />
-      <Footer />
+
+      <Suspense fallback={<div>Loading TagLine...</div>}>
+        <TagLine />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
