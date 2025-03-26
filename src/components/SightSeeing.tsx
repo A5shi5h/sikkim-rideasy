@@ -34,7 +34,7 @@ const SightSeeing = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className='text-black text-xl'>Destinations</label><br/>
-            <select
+            <select title="sightseeing form"
                 className='text-black text-sm p-2 w-full'
                 value={destination}
                 onChange={(e) => setDestinatiopn(e.target.value)}
@@ -49,7 +49,7 @@ const SightSeeing = () => {
             </select>
           </div>
           <div>
-            <input
+            <input title="date input"
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
@@ -61,7 +61,7 @@ const SightSeeing = () => {
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 text-lg"
           >
-            Let's Goo
+            Let<span>&apos;</span>s Goo
           </button>
         </form>
       </section>

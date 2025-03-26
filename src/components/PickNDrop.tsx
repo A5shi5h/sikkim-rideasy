@@ -55,7 +55,7 @@ const PickNDrop = () => {
         <div>
           <label className="text-black text-xl">Pickup Location</label>
           <br />
-          <select
+          <select title="pick n drop form"
             className="text-black text-sm p-2 w-full"
             value={pickup}
             onChange={(e) => setPickup(e.target.value)}
@@ -74,7 +74,7 @@ const PickNDrop = () => {
         <div>
           <label className="text-black text-xl">Dropoff Location</label>
           <br />
-          <select
+          <select title="pick n drop form"
             className="text-black text-sm p-2 w-full"
             value={dropoff}
             onChange={(e) => setDropoff(e.target.value)}
@@ -91,7 +91,7 @@ const PickNDrop = () => {
         </div>
 
         <div>
-          <input
+          <input title="date input"
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
