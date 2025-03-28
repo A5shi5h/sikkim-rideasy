@@ -77,6 +77,7 @@ const PichNDropBooking = () => {
           height={500}
           width={500}
           className="mb-6 rounded-lg"
+          loading="lazy"
         />
         <p className="text-xl mb-6 text-center">
           <strong>Vehicle:</strong> {car || "N/A"} <br />
