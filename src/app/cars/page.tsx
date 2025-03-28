@@ -1,9 +1,12 @@
 'use client';
 
-import Footer from '@/components/Footer';
-import TagLine from '@/components/TagLine';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
+import React, { lazy, Suspense } from "react";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
+
 
 const CarsPage = () => {
   const router = useRouter();
@@ -47,6 +50,7 @@ const CarsPage = () => {
                   height={400}
                   width={400}
                   className="object-cover rounded-lg"
+                  loading='lazy'
                 />
               </div>
 
@@ -73,8 +77,14 @@ const CarsPage = () => {
           ))}
         </main>
 
+        <Suspense fallback={<div>Loading TagLine...</div>}>
         <TagLine />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
         <Footer />
+      </Suspense>
+
       </div>
     </>
   );
