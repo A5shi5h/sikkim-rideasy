@@ -75,6 +75,7 @@ const PackageBooking = () => {
           height={400}
           width={400}
           className="mb-6 rounded-lg"
+          loading="lazy"
         />
         <p className="text-xl mb-6 text-center">
           <strong>Destination:</strong> {destination || "N/A"} <br />
