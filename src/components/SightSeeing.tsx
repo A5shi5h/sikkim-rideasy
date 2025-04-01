@@ -59,7 +59,7 @@ const SightSeeing = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 text-lg"
+            className="w-full bg-purple-700 text-white py-2 rounded-lg hover:bg-purple-600 text-lg shadow-md shadow-gray-700"
           >
             Let<span>&apos;</span>s Goo
           </button>
