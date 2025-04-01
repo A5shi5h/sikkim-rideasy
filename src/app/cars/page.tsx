@@ -77,7 +77,7 @@ const CarsPage = () => {
           ))}
         </main>
 
-        <Suspense fallback={<div>Loading TagLine...</div>}>
+      <Suspense fallback={<div>Loading TagLine...</div>}>
         <TagLine />
       </Suspense>
 

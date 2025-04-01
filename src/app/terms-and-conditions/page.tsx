@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Link from "next/link";
-import TagLine from "@/components/TagLine";
-import Footer from "@/components/Footer";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
+
 
 const TermsAndConditions = () => {
   return (
@@ -87,8 +89,14 @@ const TermsAndConditions = () => {
         </div>
       </div>
     </section>
-    <TagLine/>
-    <Footer/>
+    
+    <Suspense fallback={<div>Loading TagLine...</div>}>
+        <TagLine />
+    </Suspense>
+
+    <Suspense fallback={<div>Loading Footer...</div>}>
+      <Footer />
+    </Suspense>
     </>
   );
 };
