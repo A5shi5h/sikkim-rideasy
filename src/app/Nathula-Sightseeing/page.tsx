@@ -1,10 +1,11 @@
 "use client"
 
-import Footer from "@/components/Footer";
-import TagLine from "@/components/TagLine";
-import Instructors from "@/components/TagLine";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { lazy, Suspense } from "react";
+
+const Footer = lazy(() => import("@/components/Footer"));
+const TagLine = lazy(() => import("@/components/TagLine"));
 
 const NathulaSightseeing = () => {
   
@@ -49,7 +50,12 @@ const NathulaSightseeing = () => {
         <div className="w-full">
           {/* Included Section */}
           <h1 className="text-white text-4xl font-bold mb-6">Nathula Sightseeing</h1>
-          <img src="./images/nathula.jpg" className="rounded-md shadow-lg mb-6 w-full" alt="Gangtok Sightseeing" />
+          <Image 
+          src="/images/nathula.jpg"
+          height={400}
+          width={400} 
+          className="rounded-md shadow-lg mb-6 w-full" 
+          alt="Gangtok Sightseeing" />
 
           {/* Left: Places to Visit */}
           <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
@@ -73,7 +79,12 @@ const NathulaSightseeing = () => {
                     key={idx}
                     className="p-6 bg-white shadow-md rounded-lg flex flex-col items-center text-center transition-transform transform hover:scale-105"
                   >
-                    <img src={car.image} alt={car.name} className="rounded-md mb-4" />
+                    <Image 
+                    src={car.image} 
+                    alt={car.name}
+                    height={400}
+                    width={400} 
+                    className="rounded-md mb-4" />
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{car.name}</h3>
                     <p className="text-gray-600 text-lg mb-4">₹{car.price}</p>
                     <button
@@ -89,8 +100,15 @@ const NathulaSightseeing = () => {
           ))}
         </div>
       </div>
-      <TagLine />
-      <Footer />
+      
+      <Suspense fallback={<div>Loading TagLine...</div>}>
+        <TagLine />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer />
+      </Suspense>
+
     </>
   );
 };

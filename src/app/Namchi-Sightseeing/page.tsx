@@ -6,6 +6,8 @@ import React, { lazy, Suspense } from "react";
 
 const Footer = lazy(() => import("@/components/Footer"));
 const TagLine = lazy(() => import("@/components/TagLine"));
+
+
 const NamchiSightseeing = () => {
 
   const router = useRouter();
