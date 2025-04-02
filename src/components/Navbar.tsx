@@ -9,16 +9,10 @@ function Navbar({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={cn("fixed top-0 inset-x-0 lg:inset-x-20 z-50 p-2 bg-black shadow-md text-white rounded-md", className)}>
+    <nav className={cn("fixed top-0 inset-x-0 z-50 p-2 bg-black shadow-md text-white rounded-md", className)}>
       <div className="container mx-auto px-4 lg:py-3 py-2 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 text-xl font-bold ">
-          <Image 
-          src="/images/logo1.jpg"
-          alt="logo image"
-          width={100}
-          height={100}
-          className="h-12 w-12"/>
           Sikkim RidEasy
         </Link>
 

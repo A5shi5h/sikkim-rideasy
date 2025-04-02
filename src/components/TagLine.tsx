@@ -8,7 +8,7 @@ const tag = [
       name: 'Sikkim RidEasy',
       designation: 'Cab Services',
       image:
-        '/images/logo.jpeg',
+        '/images/sikkim rideasy.jpg',
     },
   ];
 
