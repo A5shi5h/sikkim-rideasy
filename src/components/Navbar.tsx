@@ -47,20 +47,20 @@ function Navbar({ className }: { className?: string }) {
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-6">
-          <Link href="/" className="hover:text-slate-500">
+        <div className="hidden lg:flex space-x-8 px-6">
+          <Link href="/"className="hover:bg-gray-400 p-3 rounded-lg hover:text-black">
             Home
           </Link>
-          <Link href="/taxi-packages" className="hover:text-slate-500">
+          <Link href="/taxi-packages" className="hover:bg-gray-400 p-3 rounded-lg hover:text-black">
             Taxi Packages
           </Link>
-          <Link href="/gallery" className="hover:text-slate-500">
+          <Link href="/gallery" className="hover:bg-gray-400 p-3 rounded-lg hover:text-black">
             Gallery
           </Link>
-          <Link href="/about" className="hover:text-slate-500">
+          <Link href="/about" className="hover:bg-gray-400 p-3 rounded-lg hover:text-black">
             About Us
           </Link>
-          <Link href="/contact" className="hover:text-slate-500">
+          <Link href="/contact" className="hover:bg-gray-400 p-3 rounded-lg hover:text-black">
             Contact Us
           </Link>
         </div>
