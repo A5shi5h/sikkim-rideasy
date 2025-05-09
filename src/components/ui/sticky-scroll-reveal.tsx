@@ -86,7 +86,7 @@ export const StickyScroll = ({
         className="hidden lg:block h-52 w-80 rounded-sm sticky top-1/4 overflow-hidden "
       >
         <Image 
-        src="/images/logo.jpeg"
+        src="/images/logo.jpg"
         alt="logo"
         height={500}
         width={500}
