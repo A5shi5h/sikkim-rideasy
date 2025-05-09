@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import destinationData from "../data/music_courses.json"
+import destinationData from "../data/destinations.json"
 import { BackgroundGradient } from "./ui/background-gradient"
 import Image from "next/image"
 
