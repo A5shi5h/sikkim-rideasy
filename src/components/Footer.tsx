@@ -1,3 +1,6 @@
+"use client";
+
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 
 function Footer() {
@@ -48,27 +51,21 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
-          <div className="flex space-x-4">
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
-              Facebook
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
-              Youtube
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-300"
-            >
-              Instagram
-            </a>
-          </div>
+            <h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
+            <div className="flex flex-col space-y-3">
+              <a href="#" className="flex items-center space-x-2 hover:text-blue-600 transition-colors duration-300">
+                <Facebook size={20} />
+                <span>Facebook</span>
+              </a>
+              <a href="#" className="flex items-center space-x-2 hover:text-red-600 transition-colors duration-300">
+                <Youtube size={20} />
+                <span>YouTube</span>
+              </a>
+              <a href="#" className="flex items-center space-x-2 hover:text-pink-600 transition-colors duration-300">
+                <Instagram size={20} />
+                <span>Instagram</span>
+              </a>
+            </div>
         </div>
         <div>
           <h2 className="text-white text-lg font-semibold mb-4">Contact Us</h2>
